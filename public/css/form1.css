@@ -12,13 +12,19 @@ body {
   background-image: url(../img/image4.jpg);
   overflow: hidden;
 }
-
 h2 {
   padding-top: 1.5em;
   font-size: 1.2em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 
+
+.inner-header {
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .main {
   font-family: sans-serif;
@@ -31,9 +37,10 @@ h2 {
 
 }
 .form{
+  
   margin-top: 0;
   margin-left:2.5em;
-  margin-right: 2.5em;
+  margin-right:2.5em;
 }
 
 
@@ -42,12 +49,11 @@ h2 {
   font-family: sans-serif;
   margin-top: 1.7em;
   margin-left:0;
-  width: 95%;
+  width: 90%;
   border: 1px solid black;
   border-radius: 1em;
   font-weight: 600;
 }
-
 
 
 #damaged_building,
@@ -57,20 +63,22 @@ h2 {
   font-size: 0.9em;
   font-family: sans-serif;
   height: 2.5em;
-  width: 70%;
+  width: 80%;
   margin-top: 1.7em;
   border-style: solid;
   border: 1px solid black;
   border-radius: 0.7em;
   font-weight: 600;
+  padding: 0;
 }
 
 textarea {
   margin: 0;
+  padding: 0;
   font-family: sans-serif;
   overflow: hidden;
   resize: none;
-  width: 100%;
+  width: 95%;
   border: 1px solid black;
   border-radius: 1em;
   font-weight: 600;
@@ -104,7 +112,6 @@ textarea {
 }
 
 #damage_severity {
-  margin: 0;
   margin-top: 0;
   text-align: center;
   width: 100%;
@@ -123,11 +130,11 @@ select option {
   background-color: white;
   border-style: solid;
   border: 1px solid black;
-  width: 75%;
+  width: 92%;
   height: 3em;
   border-radius: 0.7em;
   text-align: center;
-  margin-top: 1.7em;
+  margin-top: 1.1em;
   font-weight: 600;
   font-family: sans-serif;
 }
@@ -137,6 +144,7 @@ select option {
 }
 
 #submitButton {
+  
   font-family: sans-serif;
   background-color: #fffffff8;
   color: rgb(0, 0, 0);
@@ -156,8 +164,9 @@ button:hover {
   opacity: 0.8;
   transform: scale(1.1);
 }
-
 .field_file {
+  margin: 0;
+  margin-top: 1.2em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,7 +194,7 @@ button:hover {
   h2 {
     padding-top: 1em;
     font-size: 1.2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   .main {
@@ -194,11 +203,6 @@ button:hover {
     margin: 2em auto;
     text-align: center;
     box-shadow: none;
-  }
-  .form{
-    margin-top: 0;
-    margin-left:10em;
-    margin-right: 10em;
   }
   body {
     overflow: visible;
@@ -216,7 +220,7 @@ button:hover {
   h2 {
     padding-top: 1em;
     font-size: 1.2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
 
   .main {
@@ -225,11 +229,6 @@ button:hover {
     margin: 2em auto;
     text-align: center;
     box-shadow: none;
-  }
-  .form{
-    margin-top: 0;
-    margin-left:3em;
-    margin-right: 3em;
   }
   body {
     overflow: visible;
