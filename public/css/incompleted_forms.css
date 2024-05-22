@@ -83,11 +83,11 @@ li{
     width: 30%; /* Adjust width to match left-content width */
 }
 .eraseBtnLabel{
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
 .editBtnLabel,
 .eraseBtnLabel {
-    margin-left: 1em;
+    margin-left: 0.5em;
 }
 
 .editBtnLabel a,

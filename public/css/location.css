@@ -55,8 +55,9 @@
     top:13em;
     right:0.8em;
   }
+  
   .button{
-    margin-top: 4em;
+    margin-top: 0.6em;
     margin-right: 0.2em;
     margin-left: 0.2em;
   }
@@ -78,8 +79,7 @@
   
   .container {
     position: absolute;
-    top: 25em;
-    transform: translateY(-50%);
+    top: 18em;
     text-align: center;
     width: 29em;
   }
@@ -129,8 +129,9 @@
     }
     .container {
       position: absolute;
-      top: 22em;
-      transform: translateY(-50%);
+      top: 15em;
+  
+
       text-align: center;
       width: 100%;
     }
@@ -183,14 +184,13 @@
     .main{
       width: 100%;
       height: 100%;
-      
       text-align: center;
       box-shadow: none;
     }
     .container {
       position: absolute;
-      top: 22em;
-      transform: translateY(-50%);
+      top: 15em;
+  
       text-align: center;
       width: 100%;
     }
