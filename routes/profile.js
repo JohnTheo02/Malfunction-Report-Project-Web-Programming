@@ -8,8 +8,8 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/', authenticationController.checkAuthenticated, controller.getUsernameById, controller.loadProfile);
-router.get('/signout', authenticationController.checkAuthenticated, authenticationController.signOut);
+router.get('/', authenticationController.checkAuthenticated,authenticationController.checkUser, controller.getUsernameById, controller.loadProfile);
+router.get('/signout', authenticationController.checkAuthenticated,authenticationController.checkUser, authenticationController.signOut);
 
 module.exports = router;
 

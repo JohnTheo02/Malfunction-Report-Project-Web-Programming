@@ -7,7 +7,8 @@ exports.getSchoolPage = (req, res) => {
         style: "school.css",
         title: "school",
         script: "school.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 

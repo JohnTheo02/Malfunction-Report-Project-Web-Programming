@@ -7,7 +7,8 @@ exports.getMap = (req, res) => {
         style: "map.css",
         title: "map",
         script: "map.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 

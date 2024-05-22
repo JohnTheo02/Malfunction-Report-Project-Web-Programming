@@ -10,11 +10,11 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/',  authenticationController.checkAuthenticated,controller.getFormById);
-router.get('/:id',form2Controller.getAllClassNames, controller.getFormById);
-router.get('/delete/:id',controller.deleteForm);
-router.post('/update/:id', controller.updateForm);
-router.get('/edit/:id',  controller.getFormById);
+router.get('/',  authenticationController.checkAuthenticated,authenticationController.checkUser,controller.getFormById);
+router.get('/:id',authenticationController.checkAuthenticated,authenticationController.checkUser,form2Controller.getAllClassNames, controller.getFormById);
+router.get('/delete/:id',authenticationController.checkAuthenticated,authenticationController.checkUser,controller.deleteForm);
+router.post('/update/:id',authenticationController.checkAuthenticated,authenticationController.checkUser, controller.updateForm);
+router.get('/edit/:id', authenticationController.checkAuthenticated,authenticationController.checkUser, controller.getFormById);
 
 
 

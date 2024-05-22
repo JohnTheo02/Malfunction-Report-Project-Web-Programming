@@ -10,7 +10,8 @@ exports.goToAuthenticationPage = (req, res) => {
         style: "sign.css",
         title: "Sign-in",
         script: "sign-in.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 exports.goToRegistrationPage = (req, res) => {
@@ -18,7 +19,8 @@ exports.goToRegistrationPage = (req, res) => {
         style: "sign.css",
         title: "Sign up",
         script: "sign-up.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 
@@ -32,7 +34,8 @@ exports.signUp = function (req, res) {
             res.render('sign-up', { 
                 style: "sign.css", 
                 title: "sign-up", 
-                script: "sign-up.js", 
+                script: "sign-up.js",
+                accountType: req.session.accountType, 
                 registerError: { message: result.message } });
         }
         else {
@@ -63,6 +66,8 @@ exports.signIn = function (req, res) {
             if (match) {
                 req.session.loggedUserId = result.id;
                 req.session.loggedUserType = result.accountType;
+                //console.log(req.session.loggedUserId)
+                //console.log(req.session.loggedUserType)
                 //req.flash('error', "");
                 req.flash('success', "");
                 res.redirect('/admin');
@@ -74,7 +79,8 @@ exports.signIn = function (req, res) {
                     accountType: req.session.loggedUserType
                  }) */
             }
-            else if (result.accountType == "user"){
+            else {
+        
                 res.render('sign-in', {
                     layout: 'main',
                     style: "sign.css", 
@@ -84,13 +90,13 @@ exports.signIn = function (req, res) {
                 });
             }
         }
-        else {
+        else if (result.accountType == "user"){
             // console.log(req.body);
             // console.log(result)
             const match = bcrypt.compareSync(req.body.password, result.password);
             if (match) {
-                
                 req.session.loggedUserId = result.id;
+                req.session.loggedUserType = result.accountType;
                 //req.session.loggedUserType = result.accountType;
                 req.flash('error', "");
                 req.flash('success', "");
@@ -110,6 +116,7 @@ exports.signIn = function (req, res) {
                     style: "sign-in.css", 
                     title: "sign-in",
                     script: "sign-in.js",
+
                     loginError: { message: "Λάθος password" }
                 });
             }
@@ -150,7 +157,8 @@ exports.checkUser = function (req, res, next) {
         next();
     }
     else {
-        errorMessage = { message: "Πρέπει να είστε απλός χρήστης για να κάνετε κράτηση" };
+        console.log(req.session.loggedUserType)
+        errorMessage = { message: "Πρέπει να είστε απλός χρήστης" };
         res.render('sign-in', {
             style: "sign.css", 
             title: "sign-in",

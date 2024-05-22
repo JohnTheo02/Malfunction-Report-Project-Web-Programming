@@ -9,7 +9,8 @@ exports.goToAdminViewForm = (req, res) => {
         style: "adminViewForm.css",
         title: "AdminViewForm",
         script: "adminViewForm.js",
-        admin_id: req.session.loggedUserId
+        admin_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 

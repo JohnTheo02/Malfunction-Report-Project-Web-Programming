@@ -9,7 +9,8 @@ exports.goToCompletedForms = (req, res) => {
         style: "completed_forms.css",
         title: "Completed_forms",
         script: "completed_forms.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 
@@ -25,7 +26,8 @@ exports.getCompletedFormsById = function (req, res, next) {
                 title: "Completed_forms",
                 script: "completed_forms.js",
                 user_id: req.session.loggedUserId,
-                completed_forms:req.completed_forms
+                completed_forms:req.completed_forms,
+                accountType: req.session.accountType
             })
         }
     });

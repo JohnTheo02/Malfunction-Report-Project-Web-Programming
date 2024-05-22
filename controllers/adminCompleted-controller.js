@@ -9,7 +9,8 @@ exports.goToAdminCompletedForms = (req, res) => {
         style: "adminCompleted.css",
         title: "AdminCompleted",
         script: "adminCompleted.js",
-        admin_id: req.session.loggedUserId
+        admin_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 
@@ -25,8 +26,9 @@ exports.getAllCompletedForms = function (req, res, next) {
                 script: "adminCompleted.js",
                 admin_id: req.session.loggedUserId,
                 completed_forms: completed_forms,
+                accountType: req.session.accountType
             });
-            console.log(completed_forms)
+            //console.log(completed_forms)
         }
     });
 };

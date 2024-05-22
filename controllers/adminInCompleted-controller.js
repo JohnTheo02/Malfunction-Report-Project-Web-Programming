@@ -9,7 +9,8 @@ exports.goToAdminInCompletedForms = (req, res) => {
         style: "adminInCompleted.css",
         title: "AdminInCompleted",
         script: "adminInCompleted.js",
-        admin_id: req.session.loggedUserId
+        admin_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 
@@ -25,7 +26,8 @@ exports.getAllInCompletedForms = function (req, res, next) {
                 title: "adminInCompleted",
                 script: "adminInCompleted.js",
                 admin_id: req.session.loggedUserId,
-                incompleted_forms:req.incompleted_forms
+                incompleted_forms:req.incompleted_forms,
+                accountType: req.session.accountType
             })
         }
     });

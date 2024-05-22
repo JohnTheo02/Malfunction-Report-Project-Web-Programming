@@ -5,7 +5,8 @@ exports.goToForm2 = (req, res) => {
         style: "form2.css",
         title: "form",
         script: "form2.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     });
     //console.log("form");
 };

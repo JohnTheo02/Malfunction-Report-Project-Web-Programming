@@ -11,8 +11,8 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/', authenticationController.checkAuthenticated, controller.getAllBuildings,form1Controller.getDamageType, form2Controller.getAllClassNames,form1Controller.getSeverity, controller.goToForm3);
+router.get('/', authenticationController.checkAuthenticated,authenticationController.checkUser, controller.getAllBuildings,form1Controller.getDamageType, form2Controller.getAllClassNames,form1Controller.getSeverity, controller.goToForm3);
 
-router.post('/submit',authenticationController.checkAuthenticated, controller.getAllBuildings,form1Controller.getDamageType, form2Controller.getAllClassNames,form1Controller.getSeverity,controller.submitEvent); // Χρησιμοποιώντας post για την υποβολή της φόρμας
+router.post('/submit',authenticationController.checkAuthenticated, authenticationController.checkUser, controller.getAllBuildings,form1Controller.getDamageType, form2Controller.getAllClassNames,form1Controller.getSeverity,controller.submitEvent); // Χρησιμοποιώντας post για την υποβολή της φόρμας
 
 module.exports = router;

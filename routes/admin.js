@@ -8,7 +8,8 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/',controller.goToAdminPage);
+router.get('/',authenticationController.checkAuthenticated,authenticationController.checkAdmin,controller.goToAdminPage);
+router.get('/signout',authenticationController.checkAuthenticated,authenticationController.checkAdmin,authenticationController.signOut);
 
 module.exports = router;
 

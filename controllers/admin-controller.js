@@ -7,7 +7,8 @@ exports.goToAdminPage = (req, res) => {
         style: "admin.css",
         title: "Admin",
         script: "admin.js",
-        admin_id: req.session.loggedUserId
+        admin_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 

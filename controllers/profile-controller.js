@@ -47,7 +47,8 @@ exports.getAdminById = function (req, res) {
                 title: "Profile",
                 script: "profile.js",
                 user_id: req.session.loggedUserId,
-                user_name: username
+                user_name: username,
+                accountType: req.session.accountType
             })
         }
         

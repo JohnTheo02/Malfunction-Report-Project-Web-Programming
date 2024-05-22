@@ -9,7 +9,8 @@ exports.getHomePage = (req, res) => {
         script: "home.js",
         signedIn: req.session.loggedUserId,
         notSignedIn:!req.session.loggedUserId,
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 

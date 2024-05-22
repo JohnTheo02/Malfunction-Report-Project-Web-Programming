@@ -9,7 +9,8 @@ exports.goToInCompletedForms = (req, res) => {
         style: "incompleted_forms.css",
         title: "Incompleted_forms",
         script: "incompleted_forms.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        accountType: req.session.accountType
     })
 };
 
@@ -25,7 +26,8 @@ exports.getInCompletedFormsById = function (req, res, next) {
                 title: "Incompleted_forms",
                 script: "incompleted_forms.js",
                 user_id: req.session.loggedUserId,
-                incompleted_forms:req.incompleted_forms
+                incompleted_forms:req.incompleted_forms,
+                accountType: req.session.accountType
             })
         }
     });

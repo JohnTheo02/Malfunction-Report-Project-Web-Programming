@@ -8,8 +8,8 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/', authenticationController.checkAuthenticated,controller.getSchoolPage);
+router.get('/', authenticationController.checkAuthenticated,authenticationController.checkUser, controller.getSchoolPage);
 
-router.post('/submit/', authenticationController.checkAuthenticated,controller.getSelectedDepartmentBuildings, controller.getSelectedDepartmentClasses);
+router.post('/submit/', authenticationController.checkAuthenticated,authenticationController.checkUser,controller.getSelectedDepartmentBuildings, controller.getSelectedDepartmentClasses);
 
 module.exports = router;

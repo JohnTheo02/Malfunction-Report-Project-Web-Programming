@@ -9,6 +9,6 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/', authenticationController.checkAuthenticated,controller.getLocationSelectionPage);
+router.get('/', authenticationController.checkAuthenticated,authenticationController.checkUser,controller.getLocationSelectionPage);
 
 module.exports = router;

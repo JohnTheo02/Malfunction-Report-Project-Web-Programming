@@ -67,16 +67,20 @@ li {
   padding: 1em;
 }
 
-.completed_form:hover {
-  transform: scale(1.05);
-}
 
 .left-content {
   flex: 1;
 }
 
-.fa-greater-than {
-  margin-left: auto;
+.eventButtons{
+  font-size: 1.2em;
+  background-color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.eventButtons:hover{
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
