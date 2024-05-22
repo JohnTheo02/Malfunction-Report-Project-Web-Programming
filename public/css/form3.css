@@ -12,7 +12,11 @@ html {
     background-image: url(../img/image4.jpg);
     overflow: hidden;
   }
-  
+  h2 {
+    padding-top: 1.5em;
+    font-size: 1.2em;
+    margin-bottom: 3em;
+  }
   
   .inner-header {
     height: 5em;
@@ -54,6 +58,7 @@ html {
   #damaged_building,
   #class_name,
   #damage_type {
+    margin: 0;
     font-size: 0.9em;
     font-family: sans-serif;
     height: 2.5em;
@@ -66,6 +71,7 @@ html {
   }
   
   textarea {
+    margin: 0;
     font-family: sans-serif;
     overflow: hidden;
     resize: none;
@@ -103,6 +109,7 @@ html {
   }
   
   #damage_severity {
+    margin: 0;
     margin-top: 0;
     text-align: center;
     width: 100%;
@@ -117,6 +124,7 @@ html {
   
   
   #severity {
+    margin: 0;
     background-color: white;
     border-style: solid;
     border: 1px solid black;
@@ -161,6 +169,7 @@ html {
   }
   
   #file_label {
+    margin: 0;
     text-align: center;
     margin-bottom: 5px;
     max-width: 200px; 
@@ -179,8 +188,9 @@ html {
     }
   
     h2 {
-      margin-top: 5em;
+      padding-top: 1em;
       font-size: 1.2em;
+      margin-bottom: 2em;
     }
   
     .main {
@@ -209,8 +219,9 @@ html {
     }
   
     h2 {
-      margin-top: 5em;
+      padding-top: 1em;
       font-size: 1.2em;
+      margin-bottom: 2em;
     }
   
     .main {
