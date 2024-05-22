@@ -18,7 +18,6 @@ h2 {
   margin-bottom: 2em;
 }
 
-
 .inner-header {
   height: 5em;
   display: flex;
@@ -30,8 +29,8 @@ h2 {
   font-family: sans-serif;
   background-color: rgb(255, 255, 255);
   width: 30em;
-  height: 52em;
-  margin: 5em auto;
+  height: 56.5em;
+  margin: 2em auto;
   border-radius: 5em;
   text-align: center;
 
@@ -66,19 +65,17 @@ h2 {
   margin: 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  height: 2.5em;
+  height: 2em;
   width: 80%;
   margin-top: 1.7em;
   border-style: solid;
   border: 1px solid black;
   border-radius: 0.7em;
   font-weight: 600;
-  padding: 0;
+  padding:5px;
 }
 
 textarea {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
   overflow: hidden;
   resize: none;
@@ -87,6 +84,7 @@ textarea {
   border-radius: 1em;
   font-weight: 600;
   font-size: 0.9em;
+  padding:5px;
 }
 
 .additional_info {
@@ -190,17 +188,21 @@ button:hover {
 }
 
 #location {
-  font-size: 0.9em;
   font-family: sans-serif;
   height: 2.5em;
-  width: 75%;
-  
+  width: 80%;
   border-style: solid;
   border: 1px solid black;
   border-radius: 0.7em;
   font-weight: 600;
+  padding:5px;
 }
-
+.loc{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
 
 @media (max-height: 768px) {
   body {

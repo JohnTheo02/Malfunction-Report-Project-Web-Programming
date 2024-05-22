@@ -31,7 +31,7 @@ exports.updateForm = function (req, res) {
         damaged_building: req.body.damaged_building,
         class_name: req.body.class_name,
         damage_type: req.body.damage_type,
-        severity: req.body.severity,
+        severity: req.body.severity || "Δεν γνωρίζω",
         damage_info: req.body.damage_info,
         file_path: req.file.buffer, // Save the file as BLOB
         additional_info: req.body.additional_info,
