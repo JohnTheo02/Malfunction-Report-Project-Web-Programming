@@ -141,6 +141,14 @@ a{
     max-width: 100%; /* Ορίζει το μέγιστο πλάτος της εικόνας στο 100% του πλάτους του box9 */
     max-height: 100%; /* Ορίζει το μέγιστο ύψος της εικόνας στο 100% του ύψους του box9 */
 }
+.right {
+    text-align: center;
+    max-width: 100%;
+    margin-top: 0.5em;
+   
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 @media (max-height: 768px) {
