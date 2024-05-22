@@ -3,7 +3,7 @@ CREATE TABLE "damage_reports" (
     'damaged_building' TEXT,
     'class_name' TEXT NOT NULL,
     'damage_type' TEXT NOT NULL,
-    'severity' TEXT NULL,
+    'severity' TEXT DEFAULT "Δεν γνωρίζω",
     'damage_info' TEXT,
     'file_path' BLOB,
     "status" INTEGER NOT NULL DEFAULT 1,

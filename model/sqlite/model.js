@@ -181,7 +181,7 @@ exports.signIn = function (email, callback) {
         callback(err, null);
     }
     if (user.length > 0) {
-        console.log(user);
+        //console.log(user);
         user = user[0];
         let results = {
             id: user.id,
