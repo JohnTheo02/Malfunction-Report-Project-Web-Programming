@@ -20,6 +20,12 @@ exports.getFormById = function (req, res) {
 }
 
 exports.updateForm = function (req, res) {
+
+    if (!req.file) {
+        console.error("File not found in request");
+        res.status(400).send("File not found in request");
+        return;
+    }
     let form = {
         id: req.params.id,
         damaged_building: req.body.damaged_building,
@@ -27,7 +33,7 @@ exports.updateForm = function (req, res) {
         damage_type: req.body.damage_type,
         severity: req.body.severity,
         damage_info: req.body.damage_info,
-        file_path: req.body.file_path,
+        file_path: req.file.buffer, // Save the file as BLOB
         additional_info: req.body.additional_info,
         user_id: req.session.loggedUserId
     };

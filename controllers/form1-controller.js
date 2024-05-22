@@ -8,7 +8,6 @@ exports.goToForm = (req, res) => {
         user_id: req.session.loggedUserId,
         accountType: req.session.accountType
     });
-    //console.log("form");
 };
 
 exports.submitEvent = function (req, res, next) {
@@ -16,7 +15,12 @@ exports.submitEvent = function (req, res, next) {
     date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
     let dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
-
+    // Check if req.file is defined
+    if (!req.file) {
+        console.error("File not found in request");
+        res.status(400).send("File not found in request");
+        return;
+    }
 
     let form = {
         id: req.params.id,
@@ -25,7 +29,7 @@ exports.submitEvent = function (req, res, next) {
         damage_type: req.body.damage_type,
         severity: req.body.severity,
         damage_info: req.body.damage_info,
-        file_path: req.body.file_path,
+        file_path: req.file.buffer, // Save the file as BLOB
         status: "1",
         status_changed: "null",
         additional_info: req.body.additional_info,
@@ -45,7 +49,6 @@ exports.submitEvent = function (req, res, next) {
     });
 }
 
-
 exports.getBuildings = function (req, res, next) {
     db.getBuildings(function (err, buildings) {
         if (err) {
@@ -59,13 +62,10 @@ exports.getBuildings = function (req, res, next) {
                     building.push(buildings[i]);
                 }
             }
-            //console.log(building)
             res.locals.buildings = building;
             next();
         }
-
     });
-
 }
 
 exports.getClassName = function (req, res, next) {
@@ -81,13 +81,10 @@ exports.getClassName = function (req, res, next) {
                     class_.push(classes[i]);
                 }
             }
-            //console.log(class_)
             res.locals.classes = class_;
             next();
         }
-
     });
-
 }
 
 exports.getDamageType = function (req, res, next) {
@@ -103,13 +100,10 @@ exports.getDamageType = function (req, res, next) {
                     type.push(types[i]);
                 }
             }
-            //console.log(type)
             res.locals.types = type;
             next();
         }
-
     });
-
 }
 
 exports.getSeverity = function (req, res, next) {
@@ -125,13 +119,8 @@ exports.getSeverity = function (req, res, next) {
                     severity.push(severities[i]);
                 }
             }
-            //console.log(severity)
             res.locals.severities = severity;
             next();
-
         }
-
-
     });
-
 }

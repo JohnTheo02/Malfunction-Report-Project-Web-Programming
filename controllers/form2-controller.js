@@ -5,18 +5,19 @@ exports.goToForm2 = (req, res) => {
         style: "form2.css",
         title: "form",
         script: "form2.js",
-        user_id: req.session.loggedUserId,
-        accountType: req.session.accountType
+        user_id: req.session.loggedUserId
     });
     //console.log("form");
 };
 
 exports.submitEvent = function (req, res, next) {
     let date = new Date();
-    date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
-    
     let dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    
+    if (!req.file) {
+        console.error("File not found in request");
+        res.status(400).send("File not found in request");
+        return;
+    }
     db.getLocationById(req.session.loggedUserId, function (err, location) {
         if (err) {
             console.log(err);
@@ -29,7 +30,7 @@ exports.submitEvent = function (req, res, next) {
                 damage_type: req.body.damage_type,
                 severity: req.body.severity,
                 damage_info: req.body.damage_info,
-                file_path: req.body.file_path,
+                file_path: req.file.buffer, // Save the file as BLOB
                 status: "1",
                 additional_info: req.body.additional_info,
                 user_id: req.session.loggedUserId,

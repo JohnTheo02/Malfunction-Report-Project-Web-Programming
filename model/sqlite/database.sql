@@ -5,7 +5,7 @@ CREATE TABLE "damage_reports" (
     'damage_type' TEXT NOT NULL,
     'severity' TEXT NULL,
     'damage_info' TEXT,
-    'file_path' TEXT,
+    'file_path' BLOB,
     "status" INTEGER NOT NULL DEFAULT 1,
     "status_changed" TEXT DEFAULT NULL,
     'additional_info' TEXT,

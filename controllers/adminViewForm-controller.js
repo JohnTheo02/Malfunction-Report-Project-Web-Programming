@@ -20,17 +20,24 @@ exports.getFormById = function (req, res) {
             req.flash('error', 'Σφάλμα κατά την ανάκτηση της φόρμας');
             return res.redirect('/');
         }
-        //console.log(form)
+
+        // Convert the BLOB to a base64 string
+        const file_path_base64 = form.file_path ? form.file_path.toString('base64') : null;
+        const mimeType = 'image/png'; // Adjust this based on your needs
+
         res.render('adminViewForm', {
             style: "adminViewForm.css",
             title: "AdminViewForm",
             admin_id: req.session.loggedUserId,
             accountType: req.session.loggedUserType,
             form: form,
-            id: req.params.id
+            id: req.params.id,
+            file_path_base64: file_path_base64,
+            mimeType: mimeType
         });
     });
 }
+
 
 exports.getUsernameById = function (req, res, next) {
     db.getFormById(req.params.id, function (err, form) {
