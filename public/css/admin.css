@@ -210,7 +210,12 @@
     margin-top: 5em;
     font-size: 1.2em;
   }
-  
+  .logout{
+    margin-top: 2em;
+    margin-left:3em;
+    margin-right: 3em;
+    margin-bottom: 3em;
+   }
   /*.close{
       display: none;
     }*/
@@ -230,6 +235,12 @@
     text-align: center;
     box-shadow: none;
   }
+  .logout{
+    margin-top: 2em;
+    margin-left:3em;
+    margin-right: 3em;
+    margin-bottom: 3em;
+   }
   
   /*.close{
       display: none;
