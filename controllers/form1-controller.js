@@ -10,12 +10,19 @@ exports.goToForm = (req, res) => {
     });
 };
 
-exports.submitEvent = function (req, res, next) {
-    let date = new Date();
-    date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
-    let dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+const moment = require('moment-timezone');
 
-    // Check if req.file is defined
+exports.submitEvent = function (req, res, next) {
+    // Δημιουργία της τρέχουσας ώρας
+    let date = new Date();
+
+    // Μετατροπή της ώρας σε ώρα Αθηνών
+    let athensTime = moment(date).tz("Europe/Athens");
+
+    // Μορφοποίηση της ώρας σε μορφή string
+    let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
+
+    // Έλεγχος αν το req.file είναι ορισμένο
     if (!req.file) {
         console.error("File not found in request");
         res.status(400).send("File not found in request");
@@ -48,6 +55,7 @@ exports.submitEvent = function (req, res, next) {
         }
     });
 }
+
 
 exports.getBuildings = function (req, res, next) {
     db.getBuildings(function (err, buildings) {
