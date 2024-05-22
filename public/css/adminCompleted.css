@@ -9,7 +9,8 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color:rgb(225, 255, 144);
+  background-color: rgb(187, 30, 30);
+  
   background-repeat: no-repeat;
 }
 
@@ -44,10 +45,13 @@ ul {
   padding: 0;
   display: flex;
   flex-direction: column;
+ margin-left: 2em;
+ margin-right: 2em;
 }
 
-li {
-  margin: 1.5em 5em 0 5em;
+li{
+  width: 100%;
+  margin-bottom: 1.5em;
 }
 
 .completed_form {
@@ -58,34 +62,36 @@ li {
   color: black;
   width: 100%;
   height: auto;
-  text-align: left;
+  text-align:left;
   text-decoration: none;
   border: 1px solid black;
   font-size: 16px;
-  transition: all 0.3s ease;
+  
   border-radius: 1em;
-  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 
 .left-content {
   flex: 1;
+  margin-left: 1em;
 }
 
-.eventButtons{
-  font-size: 1.2em;
+.fa-arrow-rotate-left {
+  margin-left: auto;
+  margin-right: 1em;
   background-color: white;
+  font-size: 1.3em;
   border: none;
-  transition: all 0.3s ease;
+  transition: all 0.01s ease;
 }
-
-.eventButtons:hover{
-  transform: scale(1.1);
+.fa-arrow-rotate-left:hover{
+  transform: scale(1.05);
 }
-
 @media (max-width: 768px) {
   body {
-      background-color:white;
+      background-color: white;
   }
 
   .main {
