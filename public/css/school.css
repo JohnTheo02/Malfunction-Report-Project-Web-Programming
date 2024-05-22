@@ -1,0 +1,260 @@
+html {
+
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+* {
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+   background-image: url(../img/image4.jpg);
+   background-repeat: no-repeat;
+
+}
+
+ul {
+   list-style: none;
+
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.main {
+   background-color: rgb(255, 255, 255);
+   width: 30em;
+   height: 48em;
+   margin: 5em auto;
+   border-radius: 5em;
+   text-align: center;
+
+}
+
+
+
+
+.nav-container {
+   color: rgb(0, 0, 0);
+   display: flex;
+   align-items: center;
+   width: 90%;
+   margin: 0 auto;
+   justify-content: center;
+   padding-top: 2em;
+   ;
+   padding-bottom: 2em;
+}
+
+
+.nav-container {
+   font-size: 2em;
+}
+
+
+.nav_ul {
+   margin: 0 auto;
+   padding: 0;
+}
+
+.nav-container,
+.nav_ul {
+   display: flex;
+   font-size: 1.1rem;
+   width: 20em;
+}
+
+.nav_link {
+   padding-bottom: 1em;
+   border-bottom: 0.5px solid rgb(216, 216, 216);
+   transition: all 0.3s ease;
+}
+
+.nav-container {
+   z-index: 2;
+}
+
+.nav {
+   flex-direction: column;
+
+}
+
+.nav_ul {
+   flex-direction: column;
+   gap: 2em;
+}
+
+.nav_link:hover {
+
+   transform: scale(1.1);
+}
+
+.fa-bars {
+   display: block;
+   z-index: 1;
+   cursor: pointer;
+   font-size: 1.5em;
+}
+
+.fa-bars.active {
+   display: none;
+}
+
+.nav {
+   position: absolute;
+   background-color: rgb(255, 255, 255);
+   width: 27em;
+   height: 36em;
+   margin: 5em auto;
+   border-radius: 5em;
+   text-align: center;
+   bottom: 100em;
+   display: flex;
+   flex-grow: 1;
+   padding-top: 7em;
+   align-items: center;
+   text-align: center;
+   background-color: #ffffff;
+   color: rgb(0, 0, 0);
+   transition: 0s ease-in-out;
+}
+
+
+.nav.active {
+   top: -0.4em;
+
+}
+
+.image-container {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   flex-direction: row;
+   text-align: center;
+   flex-wrap: wrap;
+   display: none;
+}
+
+.image-container.active {
+   display: flex;
+}
+
+
+.image-container img {
+   border-top-left-radius: 1em;
+   border-top-right-radius: 1em;
+   cursor: pointer;
+   transition: transform 0.3s ease-in-out;
+   height: 6.7em;
+
+}
+
+.image-container a {
+   display: flex;
+   flex-direction: column;
+   border: 1px solid rgb(0, 0, 0);
+   border-radius: 1em;
+   height: 10.5em;
+   width: 13em;
+   margin-bottom: 2em;
+   transition: all 0.3s ease;
+}
+
+.image-container a p {
+   text-wrap: wrap;
+   font-size: 0.8em;
+   color: black;
+}
+
+.image-container a:link {
+   background-color: transparent;
+   text-decoration: none;
+}
+
+.image-container a:link:hover {
+   background-color: transparent;
+   text-decoration: none;
+}
+
+.image-container a:visited {
+   color: black;
+   background-color: transparent;
+   text-decoration: none;
+}
+
+.image-container a:hover {
+   transform: scale(1.1);
+   background-color: transparent;
+
+   text-decoration: underline;
+   color: rgb(105, 121, 248);
+}
+
+.image-container a:active {
+   background-color: transparent;
+   text-decoration: underline;
+}
+
+.top_hr {
+   margin-bottom: 3em;
+   background-color: rgb(255, 255, 255);
+}
+
+
+.img p {
+   color: white;
+   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.img:hover p {
+   color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+@media (max-height: 780px) {
+
+   body {
+      background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+   }
+
+   .main {
+      width: 100%;
+      height: 100%;
+      margin: 2em auto;
+      text-align: center;
+      box-shadow: none;
+   }
+
+   .nav.active {
+      top: -0.4em;
+      width: 40em;
+
+   }
+}
+
+@media (max-width: 768px) {
+   body {
+      background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+   }
+
+   .main {
+      width: 100%;
+      height: 100%;
+      margin: 2em auto;
+      text-align: center;
+      box-shadow: none;
+   }
+
+   .nav {
+      width: 22em;
+   }
+}

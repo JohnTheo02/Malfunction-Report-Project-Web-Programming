@@ -1,0 +1,161 @@
+/* Προσθήκη του αρχικού CSS που έχεις δώσει */
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: rgb(170, 79, 79);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the background covers the entire screen */
+}
+
+.main {
+    background-color: rgb(255, 255, 255);
+    width: 30em;
+    height: 150%;
+    margin: 5em auto;
+    border-radius: 5em;
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    height: 5em;
+}
+
+ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin: 1.5em 5em 0 5em;
+}
+
+.fa-solid {
+    background-color: white;
+    border: none;
+    border-radius: 0.8em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    transition: all 0.03s ease;
+}
+
+.fa-solid:hover{
+    transform: scale(1.1);
+}
+
+.fa-pen {
+    color: black;
+}
+
+.fa-trash-can {
+    color: red;
+}
+
+.incompleted_form {
+    display: flex;
+    justify-content: space-between; /* Distribute space between content */
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    text-decoration: none;
+    border: 1px solid black;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%; /* Allow space for the buttons */
+}
+
+.eventButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 30%; /* Adjust width to match left-content width */
+}
+
+.editBtnLabel,
+.eraseBtnLabel {
+    margin-left: 1em;
+}
+
+.editBtnLabel a,
+.eraseBtnLabel a {
+    text-decoration: none;
+}
+
+.editBtnLabel button,
+.eraseBtnLabel button {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: white;
+    }
+
+    .main {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 150%;
+        margin: 0;
+        border-radius: 5em;
+        text-align: center;
+        padding-bottom: 2em;
+    }
+
+    h2 {
+        margin-top: 5em;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-height: 768px) {
+    body {
+        background-color:white ;
+        overflow: visible;
+    }
+
+    .main {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 150%;
+        margin: 0;
+        border-radius: 5em;
+        text-align: center;
+        padding-bottom: 2em;
+    }
+}

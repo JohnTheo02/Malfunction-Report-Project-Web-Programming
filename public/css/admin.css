@@ -1,0 +1,237 @@
+
+*{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  :root{
+    font-size: 16px;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image: url(../img/image4.jpg);
+    background-repeat: no-repeat;
+  
+  }
+  .main {
+    background-color: rgb(255, 255, 255);
+    width: 30em;
+    height: 48em;
+    margin: 5em auto;
+    border-radius: 5em;
+    text-align: center;
+  
+  }
+  h3{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .header{
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(0, 0, 0);
+  }
+  
+  .user_tab{
+    display: flex;
+    height: 5em;
+    margin:3.6em;
+    background-color:  rgb(255, 255, 255);
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    padding-left: 1em;
+    margin-top: 4em;
+    border: 1px solid black;
+    border-radius: 1em;
+  }
+  .username{
+    font-size: 1.25em;
+    font-weight: 600;
+  
+  }
+  
+  .form_buttons {
+    background-color: rgb(52, 73, 143); 
+    justify-content:left; 
+    align-items:start;
+    color: black;
+    width: 23em;
+    height:3.5em;
+    text-align:left;
+    text-decoration: none;
+    border: black;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+  }
+  
+  .form_buttons:active{
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .form_buttons:hover{
+    border-radius: 1em 1em 0 0;
+    width: 105%;
+    
+  }
+  #top{
+    border-radius: 1em 1em 0 0;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid lightgrey;
+  }
+  #top:hover{
+    border-radius: 1em 1em 1em 0;
+    border-bottom: 1px solid black;
+  }
+  
+  #bottom:hover{
+    border-radius: 0 1em 1em 1em;
+    border-top: 1px solid black;
+  }
+  #bottom{
+    border-radius: 0px 0px 1em 1em;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  
+  .fa-arrow-right-from-bracket{
+    color:rgb(255, 0, 0);
+  }
+  .logout{
+   margin-top: 20em;
+   margin-left:3em;
+   margin-right: 3em;
+   margin-bottom: 3em;
+  }
+  
+  .single_logout{
+  background-color: rgb(255, 255, 255); 
+  justify-content: center; 
+  align-items: center;
+  color: rgb(255, 0, 0);
+  width: 100%;
+  height:2.5em;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgb(255, 0, 0);
+  border-radius: 1em;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  }
+  .single_logout:hover{
+  transform: scale(1.05);
+  }
+  
+  .single_logout:active{
+    background-color: rgb(255, 168, 168);
+  }
+  
+  .single_create:active{
+    background-color: rgb(187, 187, 187);
+  }
+  
+  
+  .circle-icon {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffffb6;
+    text-align: center;
+    line-height: 3em;
+    margin-right: 0.5em;
+    border: 1px solid black;
+  }
+  
+  .circle-icon i {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  .create_new_form{
+  margin: 3em;
+  }
+  .single_create {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  padding: 0 10px;
+  }
+  
+  .left-content {
+  display: flex;
+  align-items: center;
+  }
+  
+  .fa-solid.fa-plus {
+  margin-left: auto;
+  }
+  .view_forms{
+  margin:3em;
+  }
+  .form_buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3.5em;
+  padding: 0 10px;
+  }
+  
+  .fa-solid.fa-greater-than{
+  margin-left: auto;
+  }
+  
+  
+  @media (max-width: 768px) {
+  body {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+  }
+  
+  .main {
+    width: 100%;
+    height: 100%;
+    margin: 2em auto;
+    text-align: center;
+    box-shadow: none;
+  }
+  h2 {
+    margin-top: 5em;
+    font-size: 1.2em;
+  }
+  
+  /*.close{
+      display: none;
+    }*/
+  }
+  
+  @media (max-height: 768px) {
+  
+  body {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+    overflow: visible;
+  }
+  
+  .main {
+    width: 100%;
+    height: 100%;
+    margin: 2em auto;
+    text-align: center;
+    box-shadow: none;
+  }
+  
+  /*.close{
+      display: none;
+    }*/
+  }

@@ -1,0 +1,34 @@
+<body>
+
+
+    <div class="main">
+
+        <form id="signin" class="sign" action="/sign-in" method="POST">
+            <div class="header signin_header">Sign in</div>
+            <div id="error-msg">
+                {{#if loginError}}
+                <li>{{loginError.message}}</li>
+                {{/if}}
+            </div>
+            <div class="all">
+                <input name='email' id="email" type="text" class="input" placeholder="Email" required >
+            <br>
+            <input name='password' type="password" id="password" class="input" placeholder="Password" required>
+            <br>
+            <input type="checkBox" class="checkBox"><span class="check">Remember Password</span>
+            <br>
+
+            <button type="submit" class="submitButton" value='Login'>Log in</button>
+            <br>
+            </form>
+            <div class="footer">
+                <div>Δεν έχεις λογαριασμό;
+                    <button class="btn dhmiourgia" id="dhmiourgia">Δημιουργία</button>
+                </div>
+            </div>
+            </div>
+            
+    
+            
+    </div>
+</body>

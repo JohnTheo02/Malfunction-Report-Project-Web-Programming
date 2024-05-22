@@ -1,0 +1,26 @@
+<body>
+    <div class="main">
+        <div class="header">
+            <h3>Εκκρεμείς Δηλώσεις</h3>
+        </div>
+        <ul>
+            {{#each incompleted_forms}}
+            <li>
+                <a class="incompleted_form" href="/adminViewForm/{{id}}">
+                    <span class="left-content">
+                        Δήλωση {{this.id}} - {{this.date}}<br>
+                        Είδος: {{this.damage_type}}<br>
+                        Αίθουσα: {{this.class_name}}<br>
+                        Κτίριο: {{this.damaged_building}}
+                        </span><i class="fa-solid fa-greater-than"></i></button>
+                    </a>
+                    
+                    {{/each}}
+                </div>
+                </div>
+                
+            </li>
+            
+        </ul>
+    </div>
+</body>

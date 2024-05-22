@@ -1,0 +1,27 @@
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h3>Admin Control Panel</h3>
+        </div>
+
+        <div class="user_tab">
+            <div class="circle-icon">
+                <i class="fa-solid fa-user" style="color: #000000;"></i>
+            </div>
+            <p class="admin">Admin {{admin_id}}</p>
+        </div>
+
+        <div class="view_forms">
+            <button id="top" class="form_buttons"><span class="left-content">&nbsp;&nbsp;<i class="fa-solid fa-check"></i> &nbsp;Ολοκληρωμένες Δηλώσεις</span><i class="fa-solid fa-greater-than"></i></button>
+            <button id="bottom" class="form_buttons"><span class="left-content">&nbsp;&nbsp;<i class="fa-regular fa-clock"></i> &nbsp;Εκκρεμείς Δηλώσεις</span><i class="fa-solid fa-greater-than"></i></button>
+        </div>
+
+
+        <form class="logout" action="/profile/signout" method="GET">
+        <button class="single_logout"type="submit"><i class="fa-solid fa-arrow-right-from-bracket"></i> Αποσύνδεση</button>
+        </form>
+    </div>
+
+</body>
+

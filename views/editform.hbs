@@ -1,0 +1,39 @@
+<body>
+    <div class="main">
+        <form autocomplete="off" class="form" action="/editform/update/{{id}}" method="POST">
+            <legend class="inner-header">Επεξεργασία Πληροφοριών Βλάβης {{id}}</legend>
+            <input placeholder="Όνομα κτιρίου" type="text" id="damaged_building" name="damaged_building"
+                list="building_list" value="{{form.damaged_building}}">
+           
+            <br>
+            <input type="text" id="class_name" name="class_name" placeholder="Όνομα αίθουσας" list="class_list"
+                value="{{form.class_name}}" required>
+            
+            <br>
+            <input placeholder="Είδος βλάβης" type="text" id="damage_type" name="damage_type" list="damage_list"
+                value="{{form.damage_type}}" required>
+           
+            <br>
+            <div class="select">
+                <select name="severity" id="severity" required>
+                    <option selected value="{{form.severity}}">{{form.severity}}</option>
+                    <option value="Μικρή">Μικρή</option>
+                    <option value="Μεσαία">Μεσαία</option>
+                    <option value="Μεγάλη">Μεγάλη</option>
+                    <option value="Δεν γνωρίζω">Δεν γνωρίζω</option>
+                </select>
+            </div>
+            <br>
+            <textarea class="damage_info" id="damage_info" name="damage_info" placeholder="Περιγραφή βλάβης..." rows="8"
+                wrap="soft">{{form.damage_info}}</textarea>
+            <fieldset class="field_file">
+                <label for="file">Επιλέξτε ένα αρχείο:</label><br>
+                <input type="file" id="file_path" name="file_path" accept=".jpg, .jpeg, .png, .pdf">
+            </fieldset>
+            <textarea class="additional_info" id="additional_info" name="additional_info"
+                placeholder="Πρόσθετα σχόλια..." rows="8" wrap="soft">{{form.additional_info}}</textarea>
+            <br>
+            <button id="submitButton" type="submit">Υποβολή</button>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,47 @@
+<body>
+    <div class="main">
+        <div class="inner-header">
+            <h3>Δήλωση {{id}}</h3>
+        </div>
+        <div class="allboxes">
+            <div class="box box1">
+                <span class="left">Όνομα Χρήστη καταχώρησης:</span> <span class="right">{{user_name}}</span>
+            </div>
+            <div class="box box2">
+                <span class="left">Ημερομηνία και ώρα καταχώρησης δήλωσης:</span> <span
+                    class="right">{{form.date}}</span>
+            </div>
+            <div class="box box3">
+                <span class="left">Κτίριο Βλάβης:</span> <span class="right">{{form.damaged_building}}</span>
+            </div>
+            <div class="box box4">
+                <span class="left">Είδος Βλάβης:</span> <span class="right">{{form.damage_type}}</span>
+            </div>
+            <div class="box box5">
+                <span class="left">Αίθουσα Βλάβης:</span> <span class="right">{{form.class_name}}</span>
+            </div>
+            <div class="box box6">
+                <span class="left">Σοβαρότητα Βλάβης:</span> <span class="right">{{form.severity}}</span>
+            </div>
+            <div class="box box7">
+                <span class="left">Πληροφορίες Βλάβης:</span> <span class="right">{{form.damage_info}}</span>
+            </div>
+            <div class="box box8">
+                <span class="left">Συντεταγμένες:</span> <span class="right">{{form.location}}</span>
+            </div>
+            <div class="box box9">
+                <span class="left">Συνημμένα Αρχεία:</span> <span class="right">{{form.file_path}}</span>
+            </div>
+            <div class="box box10">
+                <span class="left">Επιπλέον Πληροφορίες:</span> <span class="right">{{form.additional_info}}</span>
+            </div>
+        </div>
+        <div class="buttons">
+
+            <div class="eraseBtnLabel"> <a href="/adminViewForm/delete/{{id}}"><button
+                        class="fa-solid fa-trash-can"></button></a></div>
+            <div class="changeStatusBtnLabel"> <a href="/adminViewForm/updatestatus/{{id}}"><button
+                        class="fa-solid fa-check"></button></a></div>
+        </div>
+    </div>
+</body>

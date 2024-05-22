@@ -1,0 +1,31 @@
+<body>
+  <div class="main">
+    <div class="sign">
+      {{#if signedIn}}
+      <a href="/profile">
+      <div class="circle-icon">
+                <i class="fa-solid fa-user" style="color: #080808;"></i>
+           </div></a>
+      {{/if}}
+      {{#if notSignedIn}}
+      <button id="signin_button" class="signin_button">Sign in</button>
+      <button id="signup_button" class="signup_button">Sign up</button>
+      {{/if}}
+    </div>
+    <div class="inner-header flex">
+
+      <!-- Πάνω τμήμα -->
+
+      <h2>Δήλωση βλάβης στο Πανεπιστήμιο Πατρών</h2>
+      <button class="first_button" style="display: flex;">
+        <i id="first_pen_icon" class="fa-regular fa-pen-to-square"></i>
+        Δήλωση νέας βλάβης
+      </button>
+
+
+    </div>
+
+  </div>
+
+</body>
+

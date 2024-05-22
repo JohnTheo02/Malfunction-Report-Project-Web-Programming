@@ -1,0 +1,38 @@
+<body>
+    <div class="main">
+        <form id="signup" class="sign" action="/sign-up" method="POST" enctype="application/x-www-form-urlencoded">
+            <div class="header signup_header">Sign up</div>
+            <div id="error-msg">
+                {{#if registerError}}
+                <li>{{registerError.message}}</li>
+                {{/if}}
+            </div>
+            <div class="all"><input required name='username' type="text" id="username" class="input"
+                    placeholder="Username">
+                <br>
+                <input required name='email' type="email" id="email" class="input" placeholder="Email">
+                <br>
+                <input required name='password' type="password" id="password" class="input" placeholder="Password">
+                <br>
+                <input required name='passwordConf' type="password" id="passConf" class="input"
+                    placeholder="Confirm Password">
+                <br>
+                <input required type="checkbox" class="checkBox"><span class="check">I agree to the terms &
+                    conditions</span>
+                <br>
+                <button type="submit" class="submitButton" value="Register">Register</button>
+                <br>
+        </form>
+        <div class="footer">
+            <div>Έχεις ήδη λογαριασμό;
+                <button class="btn sundesh" id="sundesh">Σύνδεση</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+</body>

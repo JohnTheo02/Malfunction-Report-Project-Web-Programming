@@ -1,0 +1,497 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: url(../img/image4.jpg);
+
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+p {
+  font-size: 14px;
+  color: #333333;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.inner-header {
+  height: 30em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+.circle-icon {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #ffffff;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 1em;
+  border: 1px solid black;
+}
+
+.circle-icon i {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.recipe header {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+
+.bottom_section1 {
+  padding-left: 9em;
+  padding-right: 9em;
+  padding-top: 5em;
+  opacity: 0.7;
+  color: rgb(0, 0, 0);
+
+}
+
+.bottom_section2 {
+  padding-left: 9em;
+  padding-right: 9em;
+  opacity: 0.7;
+  color: rgb(0, 0, 0);
+}
+
+.terms_of_use2 {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  text-wrap: wrap;
+  display: block;
+  text-align: center;
+  padding-left: 4em;
+  padding-right: 4em;
+  color: #2e44ff;
+
+}
+
+.terms_of_use2:link {
+  background-color: transparent;
+  text-decoration: none;
+
+}
+
+.terms_of_use2:hover {
+  background-color: transparent;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+
+h2 {
+  margin-top: 8em;
+  color: rgb(0, 0, 0);
+}
+
+
+.sign {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.signin_button {
+  font-family: 'Inter';
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  border-radius: 1em;
+  border-style: none;
+  border-color: rgb(25, 25, 25);
+  border-style: solid;
+  margin-top: 1.2em;
+  height: 2em;
+  width: 7em;
+  font-size: 0.9em;
+  background-color: rgb(25, 25, 25);
+  color: white;
+  margin-right: 1em;
+  transition: all 0.3s ease;
+}
+
+.signup_button {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  border-radius: 1em;
+  margin-top: 1.2em;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  height: 2em;
+  width: 7em;
+  font-size: 0.9em;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+
+  transition: all 0.3s ease;
+}
+
+.signin_button:hover {
+  transform: scale(1.1);
+
+}
+
+.signup_button:hover {
+  transform: scale(1.1);
+}
+
+
+
+.first_button {
+  background-color: rgb(255, 255, 255);
+
+  border: 2px solid black;
+  color: rgb(0, 0, 0);
+  font-size: 1.1em;
+  border-radius: 1.5em;
+  padding-top: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  justify-content: center;
+  padding-bottom: 1.5em;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 14.5em;
+  transition: all 0.3s ease;
+
+}
+
+.first_button:hover {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+
+
+
+.main {
+  background-color: rgb(255, 255, 255);
+  width: 30em;
+  height: 48em;
+  margin: 5em auto;
+  border-radius: 5em;
+  text-align: center;
+
+}
+
+
+
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 20em;
+  padding: 12px 20px;
+  margin: 0.8em 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.button {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 0.5em 0.9em;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10em;
+  font-size: 1em;
+  border-radius: 0.7em;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+#submit_button {
+  margin-top: 3em;
+}
+
+.container {
+  padding: 1em;
+  padding-top: 5em;
+}
+
+.paslab {
+  padding-top: 2em;
+}
+
+.psw_forgot {
+  font-size: 0.8em;
+}
+
+span.psw {
+  float: right;
+  padding-top: 1em;
+}
+
+.signin-content {
+  font-family: sans-serif;
+  background-color: #ffffff;
+  margin: 5em auto 3em auto;
+  border: 1px solid #ffffff;
+  height: 48em;
+  width: 30em;
+  border-radius: 5em;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+
+#email {
+  font-size: 1em;
+  font-family: sans-serif;
+  height: 3em;
+  width: 15em;
+  border-style: solid;
+  border: 1px solid black;
+  border-radius: 0.7em;
+  font-weight: 600;
+
+}
+
+#password {
+  font-size: 1em;
+  font-family: sans-serif;
+  height: 3em;
+  width: 15em;
+  border-style: solid;
+  border: 1px solid black;
+  border-radius: 0.7em;
+  font-weight: 600;
+
+}
+
+.code_link {
+  text-decoration: none;
+  color: #2e44ff;
+
+}
+
+.psw_forgot {
+  margin-top: 0.8em;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.signin_header {
+  font-family: sans-serif;
+  font-size: 1.4em;
+}
+
+::-webkit-input-placeholder {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+
+.footer {
+  font-family: sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.signin_header {
+  font-family: sans-serif;
+  padding-bottom: 2em;
+  font-size: 1.8em;
+
+}
+
+#password_confirm {
+
+  font-size: 1em;
+  font-family: sans-serif;
+  height: 3em;
+  width: 15em;
+  border-style: solid;
+  border: 1px solid black;
+  border-radius: 0.7em;
+  font-weight: 600;
+
+}
+
+#name {
+  font-size: 1em;
+  font-family: sans-serif;
+  height: 3em;
+  width: 15em;
+  border-style: solid;
+  border: 1px solid black;
+  border-radius: 0.7em;
+  font-weight: 600;
+}
+
+#sign {
+  color: #2e44ff;
+  font-weight: 600;
+  font-family: sans-serif;
+  background-color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#sign:hover {
+  transform: scale(1.1);
+}
+
+
+
+@media (max-width: 768px) {
+  body {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+  }
+
+  h2 {
+    margin-top: 5em;
+    font-size: 1.2em;
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+    margin: 2em auto;
+    text-align: center;
+    box-shadow: none;
+  }
+
+
+  .signin-content {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    margin: 5em auto 3em auto;
+    border: 1px solid #ffffff;
+    width: 22em;
+    height: 30em;
+    box-shadow: none;
+    border-radius: 5em;
+  }
+
+  .popup {
+
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+
+  }
+
+  /*.close{
+      display: none;
+    }*/
+}
+
+@media (max-height: 768px) {
+
+  body {
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+    overflow: visible;
+  }
+
+  h2 {
+    margin-top: 5em;
+    font-size: 1.2em;
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+    margin: 2em auto;
+    text-align: center;
+    box-shadow: none;
+  }
+
+ 
+
+  .signin-content {
+    font-family: sans-serif;
+    background-color: #ffffff;
+    margin: 5em auto 3em auto;
+    border: 1px solid #ffffff;
+    width: 22em;
+    height: 30em;
+    box-shadow: none;
+    border-radius: 5em;
+
+  }
+
+  /*.close{
+      display: none;
+    }*/
+}

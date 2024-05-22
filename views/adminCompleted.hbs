@@ -1,0 +1,27 @@
+<body>
+    <div class="main">
+        <div class="header">
+            <h3>Ολοκληρωμένες Δηλώσεις</h3>
+        </div>
+        <ul>
+            {{#each completed_forms}}
+            <li>
+                <div class="completed_form">
+                    <span class="left-content">
+                        Δήλωση {{this.id}} - {{this.date}}<br>
+                        Είδος: {{this.damage_type}}<br>
+                        Αίθουσα: {{this.class_name}}<br>
+                        Κτίριο: {{this.damaged_building}}<br>
+                        Αλλαγή κατάστασης: {{this.status_changed}}<br>
+                    </span>
+                    <div class="eraseBtnLabel">
+                        <a href="/adminCompleted/makeInComplete/{{this.id}}">
+                            <button class="eventButtons fa-solid fa-trash-can" data-status-changed="{{this.status_changed}}"></button>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</body>
