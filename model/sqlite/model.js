@@ -4,7 +4,7 @@
 const db = require('better-sqlite3');
 const bcrypt = require('bcrypt');
 const sql = new db('./model/sqlite/database.sqlite', { fileMustExist: true });
-
+const moment = require('moment-timezone');
 
 exports.submitEvent = function (form, callback) {
     const stmt = sql.prepare("INSERT INTO damage_reports VALUES (null, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?)");
@@ -374,10 +374,11 @@ exports.deleteForm = function (id, callback) {
 
 
 exports.changeFormToCompleted = function (id, callback) {
-    let date = new Date();
-    date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
+    // Δημιουργία της τρέχουσας ώρας σε ώρα Αθήνας
+    let date = moment().tz("Europe/Athens");
 
-    let currentTime = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    // Μορφοποίηση της ώρας σε μορφή string
+    let currentTime = date.format('YYYY-MM-DD HH:mm:ss');
 
     const stmt = sql.prepare("UPDATE damage_reports SET status = 0, status_changed = ? WHERE id = ?");
     try {
