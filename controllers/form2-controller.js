@@ -14,7 +14,7 @@ exports.submitEvent = function (req, res, next) {
     let date = new Date();
     date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
     let dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    
+
     if (!req.file) {
         console.error("File not found in request");
         res.status(400).send("File not found in request");
@@ -27,7 +27,7 @@ exports.submitEvent = function (req, res, next) {
         } else {
             let form = {
                 id: req.params.id,
-                damaged_building: req.body.damaged_building,
+                damaged_building: "Δηλώθηκαν συντεταγμένες της βλάβης",
                 class_name: req.body.class_name,
                 damage_type: req.body.damage_type,
                 severity: req.body.severity,

@@ -1,6 +1,6 @@
 CREATE TABLE "damage_reports" (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT,
-    'damaged_building' TEXT DEFAULT "Δηλώθηκαν συντεταγμένες",
+    'damaged_building' TEXT DEFAULT "Δηλώθηκαν συντεταγμένες της βλάβης",
     'class_name' TEXT NOT NULL,
     'damage_type' TEXT NOT NULL,
     'severity' TEXT DEFAULT "Δεν γνωρίζω",
