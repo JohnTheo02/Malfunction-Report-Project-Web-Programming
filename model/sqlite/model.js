@@ -9,7 +9,7 @@ const sql = new db('./model/sqlite/database.sqlite', { fileMustExist: true });
 exports.submitEvent = function (form, callback) {
     const stmt = sql.prepare("INSERT INTO damage_reports VALUES (null, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?)");
     try {
-        stmt.run( form.damaged_building, form.class_name, form.damage_type, form.severity, form.damage_info, form.file_path,form.status,form.status_changed, form.additional_info,form.user_id,form.location, form.date);
+        stmt.run(form.damaged_building, form.class_name, form.damage_type, form.severity, form.damage_info, form.file_path, form.status, form.status_changed, form.additional_info, form.user_id, form.location, form.date);
     } catch (err) {
         callback(err, null);
     }
@@ -25,7 +25,7 @@ exports.getBuildings = function (callback) {
         callback(err, null);
     }
     callback(null, buildings);
-    
+
 }
 
 exports.getAllBuildings = function (callback) {
@@ -37,7 +37,7 @@ exports.getAllBuildings = function (callback) {
         callback(err, null);
     }
     callback(null, buildings);
-    
+
 }
 
 exports.getClassName = function (callback) {
@@ -163,8 +163,8 @@ exports.signUp = function (username, password, email, callback) {
                 catch (err) {
                     callback(err, null);
                 }
-    
-                callback(null,true );
+
+                callback(null, true);
             }
         }
     }
@@ -216,50 +216,50 @@ exports.signIn = function (email, callback) {
         }
     }
 }
-    exports.submitTempLoc = function (location, user_id, callback) {
-        const user = sql.prepare("SELECT id FROM user WHERE id = ?").get(user_id);
-        if (!user) {
-            return callback(new Error("User ID does not exist"), null);
-        }
-    
-        try {
-            const existingLocation = sql.prepare("SELECT id FROM temp_location WHERE user_id = ?").get(user_id);
-    
-            if (existingLocation) {
-                // Αν η εγγραφή υπάρχει, ενημερώνεται:
-                const stmt = sql.prepare("UPDATE temp_location SET location = ? WHERE user_id = ?");
-                stmt.run(location, user_id);
-            } else {
-                // Αλλιώς, εισάγεται μια νέα εγγραφή:
-                const stmt = sql.prepare("INSERT INTO temp_location (location, user_id) VALUES (?, ?)");
-                stmt.run(location, user_id);
-            }
-    
-            callback(null, true);
-        } catch (err) {
-            callback(err, null);
-        }
-    };
-    
-
-    exports.getLocationById = function (user_id,callback) {
-        const stmt = sql.prepare("SELECT location FROM temp_location WHERE user_id = ?");
-        let location;
-        try {
-            location = stmt.all(user_id);
-            //console.log(location);
-        } catch (err) {
-            callback(err, null);
-        }
-        callback(null, location);
+exports.submitTempLoc = function (location, user_id, callback) {
+    const user = sql.prepare("SELECT id FROM user WHERE id = ?").get(user_id);
+    if (!user) {
+        return callback(new Error("User ID does not exist"), null);
     }
-    
+
+    try {
+        const existingLocation = sql.prepare("SELECT id FROM temp_location WHERE user_id = ?").get(user_id);
+
+        if (existingLocation) {
+            // Αν η εγγραφή υπάρχει, ενημερώνεται:
+            const stmt = sql.prepare("UPDATE temp_location SET location = ? WHERE user_id = ?");
+            stmt.run(location, user_id);
+        } else {
+            // Αλλιώς, εισάγεται μια νέα εγγραφή:
+            const stmt = sql.prepare("INSERT INTO temp_location (location, user_id) VALUES (?, ?)");
+            stmt.run(location, user_id);
+        }
+
+        callback(null, true);
+    } catch (err) {
+        callback(err, null);
+    }
+};
+
+
+exports.getLocationById = function (user_id, callback) {
+    const stmt = sql.prepare("SELECT location FROM temp_location WHERE user_id = ?");
+    let location;
+    try {
+        location = stmt.all(user_id);
+        //console.log(location);
+    } catch (err) {
+        callback(err, null);
+    }
+    callback(null, location);
+}
+
 
 
 exports.getUsernameById = function (user_id, callback) {
     const stmt = sql.prepare("SELECT username FROM user WHERE id = ?");
     let result;
-    
+
     try {
         result = stmt.get(user_id);
         //console.log(result);
@@ -268,7 +268,7 @@ exports.getUsernameById = function (user_id, callback) {
         return;
     }
     if (result && result.username) {
-        callback(null, result.username); 
+        callback(null, result.username);
     } else {
         callback(new Error('User not found'), null);
     }
@@ -277,7 +277,7 @@ exports.getUsernameById = function (user_id, callback) {
 
 
 
-exports.getCompletedFormsById = function (user_id,callback) {
+exports.getCompletedFormsById = function (user_id, callback) {
     const stmt = sql.prepare("SELECT id,damaged_building,class_name,damage_type,date FROM damage_reports WHERE user_id = ? AND status=0");
     let completed_forms;
     try {
@@ -287,7 +287,7 @@ exports.getCompletedFormsById = function (user_id,callback) {
         callback(err, null);
     }
     callback(null, completed_forms);
-    
+
 }
 
 exports.getAllCompletedForms = function (callback) {
@@ -302,7 +302,7 @@ exports.getAllCompletedForms = function (callback) {
     callback(null, completed_forms);
 }
 
-exports.getInCompletedFormsById = function (user_id,callback) {
+exports.getInCompletedFormsById = function (user_id, callback) {
     const stmt = sql.prepare("SELECT * FROM damage_reports WHERE user_id = ? AND status=1");
     let incompleted_forms;
     try {
@@ -312,7 +312,7 @@ exports.getInCompletedFormsById = function (user_id,callback) {
         callback(err, null);
     }
     callback(null, incompleted_forms);
-    
+
 }
 
 exports.getAllInCompletedForms = function (callback) {
@@ -325,7 +325,7 @@ exports.getAllInCompletedForms = function (callback) {
         callback(err, null);
     }
     callback(null, incompleted_forms);
-    
+
 }
 
 exports.getFormById = function (id, callback) {
@@ -373,7 +373,10 @@ exports.deleteForm = function (id, callback) {
 
 exports.changeFormToCompleted = function (id, callback) {
     let date = new Date();
+    date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
+
     let currentTime = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
     const stmt = sql.prepare("UPDATE damage_reports SET status = 0, status_changed = ? WHERE id = ?");
     try {
         stmt.run(currentTime, id);

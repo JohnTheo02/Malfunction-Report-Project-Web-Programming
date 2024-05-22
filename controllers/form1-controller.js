@@ -12,7 +12,9 @@ exports.goToForm = (req, res) => {
 
 exports.submitEvent = function (req, res, next) {
     let date = new Date();
+    date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
     let dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
 
 
     let form = {
