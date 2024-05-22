@@ -35,7 +35,9 @@ exports.updateForm = function (req, res) {
         damage_info: req.body.damage_info,
         file_path: req.file.buffer, // Save the file as BLOB
         additional_info: req.body.additional_info,
+        location:req.body.location,
         user_id: req.session.loggedUserId
+        
     };
     //console.log(form);
     db.updateForm(form, function (err, result) {
@@ -60,4 +62,3 @@ exports.deleteForm = function (req, res) {
         }
     });
 }
-

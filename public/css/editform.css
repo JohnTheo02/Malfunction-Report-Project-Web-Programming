@@ -13,20 +13,24 @@ html {
     overflow: hidden;
   }
   
-  
+ 
   .inner-header {
     height: 5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
+  h2 {
+    padding-top: 1.5em;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+  }
   .main {
     font-family: sans-serif;
     background-color: rgb(255, 255, 255);
     width: 30em;
-    height: 52em;
-    margin: 5em auto;
+    height: 56em;
+    margin: 2em auto;
     border-radius: 5em;
     text-align: center;
   
@@ -37,8 +41,7 @@ html {
     margin-right: 6em;
   }
   
-  
-  
+
   .field_file {
     font-family: sans-serif;
     margin-top: 1.7em;
@@ -49,11 +52,22 @@ html {
     font-weight: 600;
   }
   
-  
+  #location {
+    font-size: 0.9em;
+    font-family: sans-serif;
+    height: 2.5em;
+    width: 75%;
+    
+    border-style: solid;
+    border: 1px solid black;
+    border-radius: 0.7em;
+    font-weight: 600;
+  }
   
   #damaged_building,
   #class_name,
-  #damage_type {
+  #damage_type
+  {
     font-size: 0.9em;
     font-family: sans-serif;
     height: 2.5em;
@@ -148,23 +162,32 @@ html {
     border: 1px solid black;
     transition: all 0.3s ease;
   }
-  
+  .loc {
+    display: block; 
+    margin-bottom: 0.2em; 
+    margin-top: 0.5em;
+    justify-content: left;
+    text-align: center;
+    font-weight: 600;
+  }
+
+
   button:hover {
     opacity: 0.8;
     transform: scale(1.1);
   }
-  
-  
-  
+
   @media (max-height: 768px) {
     body {
       background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
     }
   
     h2 {
-      margin-top: 5em;
+      padding-top: 1em;
       font-size: 1.2em;
+      margin-bottom: 1em;
     }
+  
   
     .main {
       width: 100%;
@@ -192,9 +215,11 @@ html {
     }
   
     h2 {
-      margin-top: 5em;
+      padding-top: 1em;
       font-size: 1.2em;
+      margin-bottom: 1em;
     }
+  
   
     .main {
       width: 100%;

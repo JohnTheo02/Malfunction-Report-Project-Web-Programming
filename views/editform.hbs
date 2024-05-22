@@ -1,6 +1,6 @@
 <body>
     <div class="main">
-        <h2>Επεξεργασία Πληροφοριών Βλάβης {{id}}</h2>
+        <h2>Επεξεργασία Βλάβης {{id}}</h2>
         <form autocomplete="off" class="form" enctype="multipart/form-data" action="/editform/update/{{id}}" method="POST">
             <input placeholder="Όνομα κτιρίου" type="text" id="damaged_building" name="damaged_building"
                 list="building_list" value="{{form.damaged_building}}">
@@ -14,6 +14,9 @@
                 value="{{form.damage_type}}" required>
            
             <br>
+            <label class="loc">Συντεταγμένες βλάβης:</label>
+             <input placeholder="Συντεταγμένες" type="text" id="location" name="location"
+                value="{{form.location}}" required>
             <div class="select">
                 <select name="severity" id="severity" required>
                     <option selected value="{{form.severity}}">{{form.severity}}</option>
@@ -23,6 +26,8 @@
                     <option value="Δεν γνωρίζω">Δεν γνωρίζω</option>
                 </select>
             </div>
+            
+           
             <br>
             <textarea class="damage_info" id="damage_info" name="damage_info" placeholder="Περιγραφή βλάβης..." rows="8"
                 wrap="soft">{{form.damage_info}}</textarea>

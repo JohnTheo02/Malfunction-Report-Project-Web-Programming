@@ -343,7 +343,7 @@ exports.getFormById = function (id, callback) {
 }
 
 exports.updateForm = function (form, callback) {
-    let stmt = sql.prepare("UPDATE damage_reports SET damaged_building = ?, class_name = ?, damage_type = ?, severity = ?, damage_info = ?, file_path = ?, additional_info = ? WHERE id = ?");
+    let stmt = sql.prepare("UPDATE damage_reports SET damaged_building = ?, class_name = ?, damage_type = ?, severity = ?, damage_info = ?, file_path = ?, additional_info = ?, location=? WHERE id = ?");
     try {
         stmt.run(
             form.damaged_building,
@@ -353,6 +353,7 @@ exports.updateForm = function (form, callback) {
             form.damage_info,
             form.file_path,
             form.additional_info,
+            form.location,
             form.id
         );
         callback(null, true); // Μετακίνηση της κλήσης της callback μέσα στο try block

@@ -34,7 +34,7 @@ exports.submitEvent = function (req, res, next) {
         status_changed: "null",
         additional_info: req.body.additional_info,
         user_id: req.session.loggedUserId,
-        location: 'Δεν καταχωρήθηκε τοποθεσία από τον χρήστη',
+        location: 'Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη',
         date: dateString
     };
 

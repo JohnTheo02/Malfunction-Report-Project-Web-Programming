@@ -36,7 +36,7 @@ exports.submitEvent = function (req, res, next) {
                 status: "1",
                 additional_info: req.body.additional_info,
                 user_id: req.session.loggedUserId,
-                location: location && location[0] ? location[0].location : 'Δεν καταχωρήθηκε τοποθεσία από τον χρήστη',
+                location: location && location[0] ? location[0].location : 'Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη',
                 date: dateString
             };
 
@@ -91,23 +91,3 @@ exports.getLocationById = function (req, res,next) {
     });
    
 }
-
-exports.getLocationById = function (req, res,next) {
-    db.getLocationById(req.session.loggedUserId,function (err, location) {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err);
-        }
-        else {
-            //console.log(severity)
-            res.locals.location = location;
-            next();
-        
-        }
-        
-
-    });
-   
-}
-
-
