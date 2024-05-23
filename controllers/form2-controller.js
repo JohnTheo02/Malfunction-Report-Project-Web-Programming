@@ -1,5 +1,5 @@
 let db = require('../model/sqlite/model.js');
-
+const moment = require('moment-timezone');
 exports.goToForm2 = (req, res) => {
     res.render('form2', {
         style: "form2.css",
@@ -12,8 +12,11 @@ exports.goToForm2 = (req, res) => {
 
 exports.submitEvent = function (req, res, next) {
     let date = new Date();
-    date.setHours(date.getHours() + 3); // Προσθήκη τριών ωρών
-    let dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    // Μετατροπή της ώρας σε ώρα Αθηνών
+    let athensTime = moment(date).tz("Europe/Athens");
+    // Μορφοποίηση της ώρας σε μορφή string
+    let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
+
 
     if (!req.file) {
         console.error("File not found in request");
@@ -32,11 +35,12 @@ exports.submitEvent = function (req, res, next) {
                 damage_type: req.body.damage_type,
                 severity: req.body.severity || "Δεν γνωρίζω",
                 damage_info: req.body.damage_info,
-                file_path: req.file.buffer, // Save the file as BLOB
+                file_path: req.file.buffer,// BLOB
                 status: "1",
                 additional_info: req.body.additional_info,
                 user_id: req.session.loggedUserId,
                 location: location && location[0] ? location[0].location : 'Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη',
+                admin_comments: "null",
                 date: dateString
             };
 
@@ -45,8 +49,10 @@ exports.submitEvent = function (req, res, next) {
                     console.log(err);
                     res.status(500).send(err);
                 } else {
-                    req.flash('success', 'Η βλάβη καταχωρήθηκε με επιτυχία');
+                
+                    req.flash('message', 'Η βλάβη καταχωρήθηκε με επιτυχία');
                     res.redirect('/');
+                    
                 }
             });
         }

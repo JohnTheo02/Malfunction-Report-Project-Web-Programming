@@ -1,13 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const moment = require('moment-timezone'); // Βεβαιώσου ότι έχεις τη βιβλιοθήκη moment-timezone
-
-    const currentTime = moment().tz("Europe/Athens").toDate(); // Τρέχουσα ώρα σε ώρα Αθήνας
+    const currentTime = moment().tz("Europe/Athens"); // Τρέχουσα ώρα σε ώρα Αθήνας
+    console.log("Current Time:", currentTime.format('YYYY-MM-DD HH:mm:ss'));
 
     document.querySelectorAll('.eventButtons').forEach(eventButton => {
-        const statusChangedTime = moment(eventButton.dataset.statusChanged).tz("Europe/Athens").toDate(); // Ώρα αλλαγής κατάστασης σε ώρα Αθήνας
-
-        const timeDifference = currentTime - statusChangedTime;
-        const twentyMinutes = 20 * 60 * 1000; // 20 minutes in milliseconds
+        const statusChanged = eventButton.dataset.statusChanged;
+        const formDate = moment.tz(statusChanged, "Europe/Athens"); // Ώρα φόρμας σε ώρα Αθήνας
+        const timeDifference = currentTime.diff(formDate);
+        const twentyMinutes = 20 * 60 * 1000; // 20 λεπτά σε milliseconds
 
         if (timeDifference > twentyMinutes) {
             eventButton.style.display = 'none';

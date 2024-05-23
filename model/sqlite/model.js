@@ -1,15 +1,15 @@
 'use strict';
 
-// Το better-slite3 είναι εντελώς σύγχρονο
 const db = require('better-sqlite3');
 const bcrypt = require('bcrypt');
 const sql = new db('./model/sqlite/database.sqlite', { fileMustExist: true });
 const moment = require('moment-timezone');
 
 exports.submitEvent = function (form, callback) {
-    const stmt = sql.prepare("INSERT INTO damage_reports VALUES (null, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?, ?)");
+    const stmt = sql.prepare("INSERT INTO damage_reports VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    
     try {
-        stmt.run(form.damaged_building, form.class_name, form.damage_type, form.severity, form.damage_info, form.file_path, form.status, form.status_changed, form.additional_info, form.user_id, form.location, form.date);
+        stmt.run(form.damaged_building, form.class_name, form.damage_type, form.severity, form.damage_info, form.file_path, form.status, form.status_changed, form.additional_info, form.user_id, form.location,form.admin_comments, form.date);
     } catch (err) {
         callback(err, null);
     }
@@ -279,7 +279,7 @@ exports.getUsernameById = function (user_id, callback) {
 
 
 exports.getCompletedFormsById = function (user_id, callback) {
-    const stmt = sql.prepare("SELECT id,damaged_building,class_name,damage_type,date FROM damage_reports WHERE user_id = ? AND status=0");
+    const stmt = sql.prepare("SELECT * FROM damage_reports WHERE user_id = ? AND status=0");
     let completed_forms;
     try {
         completed_forms = stmt.all(user_id);
@@ -334,7 +334,6 @@ exports.getFormById = function (id, callback) {
     let form;
     try {
         form = stmt.get(id);
-        //console.log("Retrieved form:", form); // Προσθέστε αυτό τον έλεγχο
     } catch (err) {
         callback(err, null);
         return;
@@ -343,7 +342,7 @@ exports.getFormById = function (id, callback) {
 }
 
 exports.updateForm = function (form, callback) {
-    let stmt = sql.prepare("UPDATE damage_reports SET damaged_building = ?, class_name = ?, damage_type = ?, severity = ?, damage_info = ?, file_path = ?, additional_info = ?, location=? WHERE id = ?");
+    let stmt = sql.prepare("UPDATE damage_reports SET damaged_building = ?, class_name = ?, damage_type = ?, severity = ?, damage_info = ?, file_path = ?,status=?, additional_info = ?,admin_comments=?, location=?, date=? WHERE id = ?");
     try {
         stmt.run(
             form.damaged_building,
@@ -352,11 +351,14 @@ exports.updateForm = function (form, callback) {
             form.severity,
             form.damage_info,
             form.file_path,
+            form.status,
             form.additional_info,
+            form.admin_comments,
             form.location,
+            form.date,
             form.id
         );
-        callback(null, true); // Μετακίνηση της κλήσης της callback μέσα στο try block
+        callback(null, true);
     } catch (err) {
         callback(err, null);
     }
@@ -399,3 +401,44 @@ exports.changeFormToInComplete = function (id, callback) {
     }
     callback(null, true);
 };
+
+
+
+
+exports.addComment = function (form, callback) {
+    let stmt = sql.prepare("UPDATE damage_reports SET status=?, admin_comments=? WHERE id = ?");
+    try {
+        stmt.run(form.status, form.admin_comments, form.id);
+        callback(null, true); 
+    } catch (err) {
+        callback(err, null);
+    }
+}
+
+exports.getAllInSufficientForms = function (callback) {
+    const stmt = sql.prepare("SELECT * FROM damage_reports WHERE status=2");
+    let insufficient_forms;
+    try {
+        insufficient_forms = stmt.all();
+        //console.log(insuffiecient_forms)
+    } catch (err) {
+        callback(err, null);
+    }
+    callback(null, insufficient_forms);
+
+}
+
+
+
+exports.getInSufficientFormsById = function (user_id, callback) {
+    const stmt = sql.prepare("SELECT * FROM damage_reports WHERE user_id = ? AND status=2");
+    let insufficient_forms;
+    try {
+        insufficient_forms = stmt.all(user_id);
+        //console.log(completed_forms)
+    } catch (err) {
+        callback(err, null);
+    }
+    callback(null, insufficient_forms);
+
+}

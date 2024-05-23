@@ -21,7 +21,7 @@ p {
 }
 
 .inner-header {
-  height: 30em;
+  height: 25em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -232,187 +232,25 @@ input[type=password] {
   transform: scale(1.1);
 }
 
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+hr{
+  height:1px;
+  width:80%;
+  background-color: black;
+  border:none
 }
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+.footer{
+  margin-top: 14em;
 }
-
-#submit_button {
-  margin-top: 3em;
-}
-
-.container {
-  padding: 1em;
-  padding-top: 5em;
-}
-
-.paslab {
-  padding-top: 2em;
-}
-
-.psw_forgot {
-  font-size: 0.8em;
-}
-
-span.psw {
-  float: right;
-  padding-top: 1em;
-}
-
-.signin-content {
-  font-family: sans-serif;
-  background-color: #ffffff;
-  margin: 5em auto 3em auto;
-  border: 1px solid #ffffff;
-  height: 48em;
-  width: 30em;
-  border-radius: 5em;
-}
-
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-
-#email {
-  font-size: 1em;
-  font-family: sans-serif;
-  height: 3em;
-  width: 15em;
-  border-style: solid;
-  border: 1px solid black;
-  border-radius: 0.7em;
-  font-weight: 600;
-
-}
-
-#password {
-  font-size: 1em;
-  font-family: sans-serif;
-  height: 3em;
-  width: 15em;
-  border-style: solid;
-  border: 1px solid black;
-  border-radius: 0.7em;
-  font-weight: 600;
-
-}
-
-.code_link {
+.about{
+  
+  font-size: 0.9em;
   text-decoration: none;
-  color: #2e44ff;
-
+  color: rgb(0, 0, 0)
 }
-
-.psw_forgot {
-  margin-top: 0.8em;
-  font-family: sans-serif;
-  font-size: 0.8em;
-  font-weight: 600;
+.copyright{
+  font-size: 0.9em;
+  color: black;
 }
-
-.signin_header {
-  font-family: sans-serif;
-  font-size: 1.4em;
-}
-
-::-webkit-input-placeholder {
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-:-ms-input-placeholder {
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-
-.footer {
-  font-family: sans-serif;
-  font-size: 0.8em;
-  font-weight: 600;
-}
-
-.signin_header {
-  font-family: sans-serif;
-  padding-bottom: 2em;
-  font-size: 1.8em;
-
-}
-
-#password_confirm {
-
-  font-size: 1em;
-  font-family: sans-serif;
-  height: 3em;
-  width: 15em;
-  border-style: solid;
-  border: 1px solid black;
-  border-radius: 0.7em;
-  font-weight: 600;
-
-}
-
-#name {
-  font-size: 1em;
-  font-family: sans-serif;
-  height: 3em;
-  width: 15em;
-  border-style: solid;
-  border: 1px solid black;
-  border-radius: 0.7em;
-  font-weight: 600;
-}
-
-#sign {
-  color: #2e44ff;
-  font-weight: 600;
-  font-family: sans-serif;
-  background-color: white;
-  border: none;
-  transition: all 0.3s ease;
-}
-
-#sign:hover {
-  transform: scale(1.1);
-}
-
 
 
 @media (max-width: 768px) {
@@ -431,6 +269,19 @@ span.psw {
     margin: 2em auto;
     text-align: center;
     box-shadow: none;
+  }
+  .footer{
+    margin-top: 3em;
+  }
+  .about{
+    
+    font-size: 0.9em;
+    text-decoration: none;
+    color: rgb(0, 0, 0)
+  }
+  .copyright{
+    font-size: 0.9em;
+    color: black;
   }
 
 
@@ -476,8 +327,19 @@ span.psw {
     text-align: center;
     box-shadow: none;
   }
-
- 
+  .footer{
+    margin-top: 3em;
+  }
+  .about{
+    
+    font-size: 0.9em;
+    text-decoration: none;
+    color: rgb(0, 0, 0)
+  }
+  .copyright{
+    font-size: 0.9em;
+    color: black;
+  }
 
   .signin-content {
     font-family: sans-serif;

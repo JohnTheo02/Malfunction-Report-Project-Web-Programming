@@ -1,0 +1,27 @@
+<body>
+    <div class="main">
+        <div class="header">
+            <h3>Μη επαρκείς Δηλώσεις</h3>
+        </div>
+        <ul>
+            {{#each insufficient_forms}}
+            <li>
+                <div class="insufficient_form">
+                    <span class="left-content">
+                        Δήλωση {{this.id}} - {{this.date}}<br>
+                        Είδος: {{this.damage_type}}<br>
+                        Αίθουσα: {{this.class_name}}<br>
+                        Κτίριο: {{this.damaged_building}}<br><br>
+
+                        <span class="admin_comment">Σχόλιο Διαχειριστή: {{this.admin_comments}}</span>
+                    </span>
+                    <div class="eventButtons" >
+                        <a href="/adminAddComment/{{this.id}}">
+                            <button class="eventButtons fa-solid fa-pen" data-date="{{this.date}}"></button>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+</body>

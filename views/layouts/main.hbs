@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{{title}}}</title>
-        <link rel="stylesheet" href="/css/{{style}}">
-        <script src="https://kit.fontawesome.com/21e8240c08.js" crossorigin="anonymous"></script>
-        {{!-- <link rel="stylesheet" href="/style.css"> --}}
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{{title}}}</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/{{style}}">
+    <script src="https://kit.fontawesome.com/21e8240c08.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+        
+</head>
 
-    <body>
-        {{{body}}}
-    </body>
+<body>
+    {{{body}}}
 
-    <script src="src/{{script}}"></script>
+    <!-- Alert message -->
+    {{#if message}}
+
+    <div id="alert-popup" class="alert">
+        <div class="alert-content">
+            <span class="close" id="close-alert">&times;</span>
+            <p class="message">{{message}}</p>
+        </div>
+
+    </div>
+    
+    {{/if}}
+
+
+
+
+</body>
+<script src="src/main.js"></script>
+<script src="src/{{script}}"></script>
+
 
 </html>

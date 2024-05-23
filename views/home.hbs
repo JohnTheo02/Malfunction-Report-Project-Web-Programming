@@ -3,9 +3,10 @@
     <div class="sign">
       {{#if signedIn}}
       <a href="/profile">
-      <div class="circle-icon">
-                <i class="fa-solid fa-user" style="color: #080808;"></i>
-           </div></a>
+        <div class="circle-icon">
+          <i class="fa-solid fa-user" style="color: #080808;"></i>
+        </div>
+      </a>
       {{/if}}
       {{#if notSignedIn}}
       <button id="signin_button" class="signin_button">Sign in</button>
@@ -25,7 +26,14 @@
 
     </div>
 
+    <footer class="footer">
+      <a href="/about" class="about">About us</a>
+      <hr>
+      <p class="copyright">© Copyright 2024</p>
+    </footer>
+
+
   </div>
 
-</body>
 
+</body>

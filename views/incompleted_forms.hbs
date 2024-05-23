@@ -14,11 +14,15 @@
                         Κτίριο: {{this.damaged_building}}
                     </span>
                     <div class="eventButtons" data-date="{{this.date}}">
-                    <div class="editBtnLabel"> <a href="/editform/edit/{{this.id}}"><button class="fa-solid fa-pen"></button></a></div>
-                    <div class="eraseBtnLabel"> <a href="/editform/delete/{{this.id}}"><button class="fa-solid fa-trash-can"></button></a></div>
+                        <div class="editBtnLabel"> <a href="/editform/edit/{{this.id}}"><button
+                                    class="fa-solid fa-pen"></button></a></div>
+                        <div class="eraseBtnLabel">
+                            <button class="fa-solid fa-trash-can" onclick="confirmDelete('{{id}}')"></button>
+                        </div>
+
+                    </div>
                 </div>
-                </div>
-                
+
             </li>
             {{/each}}
         </ul>

@@ -11,7 +11,9 @@ CREATE TABLE "damage_reports" (
     'additional_info' TEXT,
     'user_id' INTEGER NOT NULL,
     'location' TEXT DEFAULT "Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη",
+    'admin_comments' TEXT DEFAULT NULL,
     'date' TEXT DEFAULT (datetime('now', 'localtime')),
+    
     FOREIGN KEY('user_id') REFERENCES 'user'('id') ON DELETE CASCADE
 );
 

@@ -31,16 +31,27 @@ exports.signUp = function (req, res) {
             res.redirect('/');
         }
         else if (result.message) {
-            res.render('sign-up', { 
-                style: "sign.css", 
-                title: "sign-up", 
+            res.render('sign-up', {
+                style: "sign.css",
+                title: "sign-up",
                 script: "sign-up.js",
-                accountType: req.session.accountType, 
-                registerError: { message: result.message } });
+                accountType: req.session.accountType,
+                registerError: { message: result.message }
+            });
         }
         else {
-            console.log('registration successful');
-            res.redirect('/');
+            //console.log('registration successful');
+            
+            //res.redirect('/');
+            res.render('home', {
+                style: "home.css",
+                title: "Home",
+                script: "home.js",
+                message: "Η εγγραφή σας ολοκληρώθηκε με επιτυχία",
+                signedIn: req.session.loggedUserId,
+                notSignedIn: !req.session.loggedUserId,
+                user_id: req.session.loggedUserId
+            })
         }
     })
 }
@@ -69,7 +80,6 @@ exports.signIn = function (req, res) {
                 //console.log(req.session.loggedUserId)
                 //console.log(req.session.loggedUserType)
                 //req.flash('error', "");
-                req.flash('success', "");
                 res.redirect('/admin');
                 /* res.render('home', {
                     layout: 'main',
@@ -80,40 +90,36 @@ exports.signIn = function (req, res) {
                  }) */
             }
             else {
-        
+
                 res.render('sign-in', {
                     layout: 'main',
-                    style: "sign.css", 
+                    style: "sign.css",
                     title: "sign-in",
                     script: "sign-in.js",
                     loginError: { message: "Λάθος password" }
                 });
             }
         }
-        else if (result.accountType == "user"){
-            // console.log(req.body);
-            // console.log(result)
+        else if (result.accountType == "user") {
             const match = bcrypt.compareSync(req.body.password, result.password);
             if (match) {
                 req.session.loggedUserId = result.id;
                 req.session.loggedUserType = result.accountType;
-                //req.session.loggedUserType = result.accountType;
                 req.flash('error', "");
-                req.flash('success', "");
-                // console.log(req.session);
-                res.redirect('/');
-                /* res.render('home', {
-                    style: "home.css", 
+                
+                //res.redirect('/');
+                res.render('home', {
+                    style: "home.css",
                     title: "Home",
                     script: "home.js",
                     signedIn: req.session.loggedUserId,
-                    notSignedIn:!req.session.loggedUserId,
+                    notSignedIn: !req.session.loggedUserId,
                     user_id: req.session.loggedUserId
-                 }) */
+                })
             }
             else {
                 res.render('sign-in', {
-                    style: "sign-in.css", 
+                    style: "sign-in.css",
                     title: "sign-in",
                     script: "sign-in.js",
 
@@ -144,10 +150,11 @@ exports.checkAuthenticated = function (req, res, next) {
             // console.log("not authenticated, redirecting to /login")
             errorMessage = { message: "Πρέπει να συνδεθείτε" };
             res.render('sign-in', {
-                style: "sign.css", 
-                title: "sign-in", 
-                script: "sign-in.js", 
-                loginError: errorMessage });
+                style: "sign.css",
+                title: "sign-in",
+                script: "sign-in.js",
+                loginError: errorMessage
+            });
         }
     }
 }
@@ -160,10 +167,11 @@ exports.checkUser = function (req, res, next) {
         console.log(req.session.loggedUserType)
         errorMessage = { message: "Πρέπει να είστε απλός χρήστης" };
         res.render('sign-in', {
-            style: "sign.css", 
+            style: "sign.css",
             title: "sign-in",
             script: "sign-in.js",
-            loginError: errorMessage });
+            loginError: errorMessage
+        });
     }
 }
 

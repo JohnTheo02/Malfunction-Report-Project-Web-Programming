@@ -39,6 +39,7 @@ exports.changeFormToInComplete = function (req, res) {
             console.log(err);
             res.status(500).send(err);
         } else {
+            req.flash('message', 'Επιτυχής αλλαγή της δήλωσης σε μη ολοκληρωμένη');
             res.redirect('/admin');
         }
     });

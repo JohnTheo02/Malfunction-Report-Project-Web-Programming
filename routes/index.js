@@ -21,6 +21,9 @@ const adminInCompletedRouter = require('./adminInCompleted.js');
 const adminViewFormRouter = require('./adminViewForm.js');
 const signInRouter = require('./sign-in.js');
 const signUpRouter = require('./sign-up.js');
+const adminAddCommentRouter = require('./adminAddComment.js');
+const adminInSufficientRouter = require('./adminInSufficient.js');
+const insufficientFormsRouter = require('./insufficient_forms.js');
 
 router.use((req, res, next) => {
     next();
@@ -55,6 +58,9 @@ router.use('/adminInCompleted', adminInCompletedRouter);
 router.use('/adminViewForm', adminViewFormRouter);
 router.use('/sign-in', signInRouter);
 router.use('/sign-up', signUpRouter);
+router.use('/adminAddComment', adminAddCommentRouter);
+router.use('/adminInSufficient', adminInSufficientRouter);
+router.use('/insufficient_forms', insufficientFormsRouter);
 
 // Home page router
 router.get('/home', homeController.getHomePage);

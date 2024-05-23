@@ -1,4 +1,5 @@
 let db = require('../model/sqlite/model.js');
+const moment = require('moment-timezone');
 
 exports.goToForm = (req, res) => {
     res.render('form1', {
@@ -10,15 +11,11 @@ exports.goToForm = (req, res) => {
     });
 };
 
-const moment = require('moment-timezone');
-
 exports.submitEvent = function (req, res, next) {
-    // Δημιουργία της τρέχουσας ώρας
+    
     let date = new Date();
-
     // Μετατροπή της ώρας σε ώρα Αθηνών
     let athensTime = moment(date).tz("Europe/Athens");
-
     // Μορφοποίηση της ώρας σε μορφή string
     let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
 
@@ -36,12 +33,13 @@ exports.submitEvent = function (req, res, next) {
         damage_type: req.body.damage_type,
         severity: req.body.severity || "Δεν γνωρίζω",
         damage_info: req.body.damage_info,
-        file_path: req.file.buffer, // Save the file as BLOB
+        file_path: req.file.buffer, // BLOB
         status: "1",
         status_changed: "null",
         additional_info: req.body.additional_info,
         user_id: req.session.loggedUserId,
         location: 'Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη',
+        admin_comments: "null",
         date: dateString
     };
 
@@ -50,20 +48,20 @@ exports.submitEvent = function (req, res, next) {
             console.log(err);
             res.status(500).send(err);
         } else {
-            req.flash('success', 'Η βλάβη καταχωρήθηκε με επιτυχία');
+
+            req.flash('message', 'Η βλάβη καταχωρήθηκε με επιτυχία');
             res.redirect('/');
+            
         }
     });
-}
-
+};
 
 exports.getBuildings = function (req, res, next) {
     db.getBuildings(function (err, buildings) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
-        }
-        else {
+        } else {
             let building = [];
             for (let i = 0; i < buildings.length; i++) {
                 if (buildings[i]) {
@@ -74,15 +72,14 @@ exports.getBuildings = function (req, res, next) {
             next();
         }
     });
-}
+};
 
 exports.getClassName = function (req, res, next) {
     db.getClassName(function (err, classes) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
-        }
-        else {
+        } else {
             let class_ = [];
             for (let i = 0; i < classes.length; i++) {
                 if (classes[i]) {
@@ -93,15 +90,14 @@ exports.getClassName = function (req, res, next) {
             next();
         }
     });
-}
+};
 
 exports.getDamageType = function (req, res, next) {
     db.getDamageType(function (err, types) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
-        }
-        else {
+        } else {
             let type = [];
             for (let i = 0; i < types.length; i++) {
                 if (types[i]) {
@@ -112,15 +108,14 @@ exports.getDamageType = function (req, res, next) {
             next();
         }
     });
-}
+};
 
 exports.getSeverity = function (req, res, next) {
     db.getSeverity(function (err, severities) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
-        }
-        else {
+        } else {
             let severity = [];
             for (let i = 0; i < severities.length; i++) {
                 if (severities[i]) {
@@ -131,4 +126,4 @@ exports.getSeverity = function (req, res, next) {
             next();
         }
     });
-}
+};

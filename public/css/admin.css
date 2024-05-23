@@ -79,6 +79,7 @@
   .form_buttons:hover{
     border-radius: 1em 1em 0 0;
     width: 105%;
+    cursor: pointer;
     
   }
   #top{
@@ -91,11 +92,25 @@
   #top:hover{
     border-radius: 1em 1em 1em 0;
     border-bottom: 1px solid black;
+    cursor: pointer;
   }
-  
+  #middle{
+    border-radius:0;
+    border-top: 1px solid lightgrey;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid lightgrey;
+  }
+  #middle:hover{
+    border-radius: 0 1em 1em 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+  }
   #bottom:hover{
     border-radius: 0 1em 1em 1em;
     border-top: 1px solid black;
+    cursor: pointer;
   }
   #bottom{
     border-radius: 0px 0px 1em 1em;
@@ -109,7 +124,7 @@
     color:rgb(255, 0, 0);
   }
   .logout{
-   margin-top: 20em;
+  margin-top: 15em;
    margin-left:3em;
    margin-right: 3em;
    margin-bottom: 3em;
@@ -131,6 +146,7 @@
   }
   .single_logout:hover{
   transform: scale(1.05);
+  cursor: pointer;
   }
   
   .single_logout:active{
@@ -211,7 +227,7 @@
     font-size: 1.2em;
   }
   .logout{
-    margin-top: 7em;
+    margin-top: 6em;
     margin-left:3em;
     margin-right: 3em;
     margin-bottom: 3em;
@@ -236,7 +252,7 @@
     box-shadow: none;
   }
   .logout{
-    margin-top: 7em;
+    margin-top: 6em;
     margin-left:3em;
     margin-right: 3em;
     margin-bottom: 3em;

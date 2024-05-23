@@ -32,28 +32,43 @@ exports.getUsernameById = function (req, res) {
     });
     
 }
+ 
 
-exports.getAdminById = function (req, res) {
-    db.getAdminById(req.session.loggedUserId,function (err, username) {
-        //console.log(req.session.loggedUserId)
-        //console.log(username)
+
+exports.getInCompletedFormsById = function (req, res, next) {
+    db.getInCompletedFormsById(req.session.loggedUserId, function (err, incompleted_forms) {
         if (err) {
             console.log(err);
             res.status(500).send(err);
+        } else {
+            res.locals.numOfInCompForms = incompleted_forms.length;
+            next();
+            
         }
-        else {
-            res.render('profile', {
-                style: "profile.css",
-                title: "Profile",
-                script: "profile.js",
-                user_id: req.session.loggedUserId,
-                user_name: username,
-                accountType: req.session.accountType
-            })
-        }
-        
     });
-    
-}
+};
 
 
+exports.getCompletedFormsById = function (req, res, next) {
+    db.getCompletedFormsById(req.session.loggedUserId, function (err, completed_forms) {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.locals.numOfCompForms = completed_forms.length;
+            next();
+        }
+    });
+};
+
+exports.getInSufficientFormsById = function (req, res, next) {
+    db.getInSufficientFormsById(req.session.loggedUserId, function (err, insufficient_forms) {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.locals.numOfInSuffForms = insufficient_forms.length;
+            next();
+        }
+    });
+};

@@ -20,7 +20,8 @@ exports.getInCompletedFormsById = function (req, res, next) {
             console.log(err);
             res.status(500).send(err);
         } else {
-            req.incompleted_forms = incompleted_forms; // Attach the forms to the request object
+            
+            req.incompleted_forms = incompleted_forms;
             res.render('incompleted_forms', {
                 style: "incompleted_forms.css",
                 title: "Incompleted_forms",

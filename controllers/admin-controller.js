@@ -8,7 +8,8 @@ exports.goToAdminPage = (req, res) => {
         title: "Admin",
         script: "admin.js",
         admin_id: req.session.loggedUserId,
-        accountType: req.session.accountType
+        accountType: req.session.accountType,
+        message: req.flash('message') // Προβολή του μηνύματος
     })
 };
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 let db = require('../model/sqlite/model.js');
+const moment = require('moment-timezone');
 
 exports.getFormById = function (req, res) {
     db.getFormById(req.params.id, function (err, form) {
@@ -20,6 +21,11 @@ exports.getFormById = function (req, res) {
 }
 
 exports.updateForm = function (req, res) {
+    let date = new Date();
+    // Μετατροπή της ώρας σε ώρα Αθηνών
+    let athensTime = moment(date).tz("Europe/Athens");
+    // Μορφοποίηση της ώρας σε μορφή string
+    let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
 
     if (!req.file) {
         console.error("File not found in request");
@@ -33,9 +39,12 @@ exports.updateForm = function (req, res) {
         damage_type: req.body.damage_type,
         severity: req.body.severity || "Δεν γνωρίζω",
         damage_info: req.body.damage_info,
-        file_path: req.file.buffer, // Save the file as BLOB
+        file_path: req.file.buffer,
+        status: "1", 
         additional_info: req.body.additional_info,
         location:req.body.location,
+        admin_comments: "null",
+        date: dateString,
         user_id: req.session.loggedUserId
         
     };
@@ -45,7 +54,7 @@ exports.updateForm = function (req, res) {
             req.flash('error', 'Σφάλμα κατά την ενημέρωση της φόρμας');
             return res.redirect(`/editform/edit/${req.params.id}`);
         }
-        req.flash('success', 'Η φόρμα ενημερώθηκε με επιτυχία');
+        req.flash('message', 'Η δήλωση σας επεξεργάστηκε επιτυχώς');
         res.redirect('/');
     });
 }
@@ -58,6 +67,7 @@ exports.deleteForm = function (req, res) {
             res.status(500).send(err);
         }
         else {
+            req.flash('message', 'Η δήλωση διαγράφηκε με επιτυχία');
             res.redirect('/incompleted_forms');
         }
     });

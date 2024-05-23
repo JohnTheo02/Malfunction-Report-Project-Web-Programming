@@ -10,7 +10,8 @@ exports.getHomePage = (req, res) => {
         signedIn: req.session.loggedUserId,
         notSignedIn:!req.session.loggedUserId,
         user_id: req.session.loggedUserId,
-        accountType: req.session.accountType
+        accountType: req.session.accountType,
+        message: req.flash('message') // Προβολή του μηνύματος
     })
 };
 

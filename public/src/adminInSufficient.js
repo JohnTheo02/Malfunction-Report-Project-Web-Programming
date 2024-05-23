@@ -11,17 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const twentyMinutes = 20 * 60 * 1000; // 20 λεπτά σε milliseconds
 
         if (timeDifference > twentyMinutes) {
-            eventButton.style.display = 'none';
+            
+                eventButton.style.display = 'none';
         }
     });
 });
-
-
-function confirmDelete(id) {
-    var result = confirm("Είστε σίγουρος/η ότι θέλετε να διαγράψετε τη δήλωση;");
-
-    if (result) {
-        window.location.href = "/editform/delete/" + id;
-    }
-}
-

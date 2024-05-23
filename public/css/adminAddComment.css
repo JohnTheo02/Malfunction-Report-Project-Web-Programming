@@ -27,8 +27,7 @@ body {
     margin: 5em auto;
     border-radius: 5em;
     text-align: center;
-  
-    padding-bottom: 4em;
+    padding-bottom: 0.1em;
     position: relative;
 }
 
@@ -66,25 +65,25 @@ body {
 .buttons {
     position: absolute;
     bottom: 3em;
-    left: 8em;
-    width: 50%;
+    left: 10em;
+    width: 40%;
     display: flex;
     justify-content:center;
     
 }
 
 .changeStatusBtnLabel button,
-.eraseBtnLabel button,
-.addCommentBtnLabel button {
+.eraseBtnLabel button {
+
     font-size: 1.5em;
     background: none;
     border: none;
 }
-
 .changeStatusBtnLabel button{
-     font-size: 1.8em;
+    font-size: 1.8em;
 }
 a{
+    margin-right: 1em;
     text-decoration: none;
     color: black;
     cursor:pointer;
@@ -97,20 +96,17 @@ a{
 }
 
 .changeStatusBtnLabel,
-.eraseBtnLabel,
-.addCommentBtnLabel {
+.eraseBtnLabel {
     margin-left: 1em;
 }
 
 .changeStatusBtnLabel a,
-.eraseBtnLabel a,
-.addCommentBtnLabel a {
+.eraseBtnLabel a {
     text-decoration: none;
 }
 
 .changeStatusBtnLabel button,
-.eraseBtnLabel button,
-.addCommentBtnLabel button {
+.eraseBtnLabel button {
     cursor: pointer;
 }
 .fa-solid {
@@ -119,18 +115,13 @@ a{
     border-radius: 0.8em;
     transition: all 0.03s ease;
     
+    
 }
 
 .fa-solid:hover{
     transform: scale(1.1);
 }
-.fa-regular{
-    transition: all 0.03s ease;
-}
 
-.fa-regular:hover{
-    transform: scale(1.1);
-}
 .fa-check {
     color: rgb(0, 0, 0);
 }
@@ -157,7 +148,63 @@ a{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+textarea {
+    
+    margin: 0;
+    margin-top: 3em;
+    padding: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+    resize: none;
+    width: 95%;
+    border: 1px solid black;
+    border-radius: 1em;
+    font-weight: 600;
+    font-size: 0.9em;
+    padding: 5px;
+  }
 
+  #submitButton {
+    font-family: sans-serif;
+    background-color: #fffffff8;
+    color: rgb(0, 0, 0);
+    height: 2.5em;
+    margin: 1.2em 0;
+    border: none;
+    cursor: pointer;
+    width: 10em;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 0.7em;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  ::-webkit-input-placeholder {
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  :-ms-input-placeholder {
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
 
 @media (max-height: 768px) {
     body {
