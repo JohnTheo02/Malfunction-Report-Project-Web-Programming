@@ -1,5 +1,5 @@
 const express = require('express');
-const controller = require('../controllers/adminAddComments-controller');
+const controller = require('../controllers/adminAddComment-controller');
 const authenticationController = require('../controllers/sign-controller');
 
 const router = express.Router();

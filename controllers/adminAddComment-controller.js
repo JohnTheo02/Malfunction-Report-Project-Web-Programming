@@ -23,11 +23,12 @@ exports.getFormById = function (req, res) {
 
         // Convert the BLOB to a base64 string
         const file_path_base64 = form.file_path ? form.file_path.toString('base64') : null;
-        const mimeType = 'image/png'; // Adjust this based on your needs
+        const mimeType = 'image/png';
 
-        res.render('AdminAddComment', {
-            style: "AdminAddComment.css",
+        res.render('adminAddComment', {
+            style: "adminAddComment.css",
             title: "AdminAddComment",
+            script: "adminAddComment.js",
             admin_id: req.session.loggedUserId,
             accountType: req.session.loggedUserType,
             form: form,
