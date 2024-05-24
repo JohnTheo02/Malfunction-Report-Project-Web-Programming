@@ -1,31 +1,40 @@
 # Εφαρμογή Δήλωσης Βλαβών στο Πανεπιστήμιο Πατρών ΟΜΑΔΑ 9
-# Malfunction Reporting Application for University of Patras ΤΕΑΜ 9
 
+#### Mobile application
 
 ---
 
-#### Description 
+#### Public URL 
 
 URL: [https://malfunctionreport-26370e429b90.herokuapp.com/](https://malfunctionreport-26370e429b90.herokuapp.com/)
 
 ---
 
+### Description 
+
+Our application is mainly for mobile use and is constructed for reporting a damage/malfunction in University of Patras.
+
+---
+
+
 #### Creators 
 
-Giannis Theodorou
+
 Dimitris Gounelas
+
+Giannis Theodorou
 
 ---
 
 ### Dependencies Installation
 
+To install all the required dependencies for the application open your terminal and run the following command:
 
 ```bash
 npm install 
 ```
 
-In order to install all the required dependencies for the application open your terminal and run the above command.
-
+---
 
 ### Database Creation
 
@@ -36,6 +45,7 @@ cd change/path/to/model/sqlite
 ```
 
 where the change/path/to/model/sqlite is your path to sqlite folder.
+
 After that run the following command:
 
 ```bash
@@ -44,10 +54,11 @@ node populateDb.js
 
 After running the above command the database has been created in ../model/sqlite/database.sqlite
 
+----
 
 ### Run the application locally
 
-###### Run the following command
+###### After installing the required dependencies and the Database run the following command:
 
 ```bash
 npm run watch
