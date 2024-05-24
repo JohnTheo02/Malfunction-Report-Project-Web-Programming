@@ -1,0 +1,141 @@
+* {
+  font-family: 'Segoe UI';
+}
+  #map {
+      height: 85%;  
+    }
+    
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background-image: url(../img/image4.jpg);
+      background-repeat: no-repeat;
+  
+  }
+    h3{
+      width: 100%;
+  
+      display: flex;
+      justify-content: center; /* Horizontal centering */
+      align-items: center; /* Vertical centering */
+      margin: 0;
+    }
+    .main {
+      background-color: rgb(255, 255, 255);
+      width: 30em;
+      height: 48em;
+      margin: 5em auto;
+      border-radius: 5em;
+      text-align: center;
+      border-bottom-left-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+    }
+  
+  
+    .header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+      margin-bottom: 0;
+    
+      color: rgb(0, 0, 0);
+      height: 10%;  
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .form{
+      display: flex;
+      margin: 0;
+      width: 50%;
+    }
+    
+    .footer {
+      display: flex;
+      height: 5%;
+      margin: 0;
+    }
+  
+    #select {
+      width: 100%;
+    }
+    
+    
+    .buttons {
+      display: block;
+      background-color: rgb(255, 255, 255); 
+      color: rgb(0, 0, 0);
+      border-radius: 0.5em;
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border: 1px solid black;
+      transition: all 0.3s ease;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+  
+  
+    .buttons:hover{
+      transform: scale(1.02);
+    }
+  
+    .buttons:active{
+      
+      background-color: darkslategray;
+    }
+    
+    html, body {
+      height: 100%;
+      margin-top: 0;
+      margin: 0;
+      padding: 0;
+    }
+     
+    #textInput {
+      display: none;
+      width: 0;
+    }  
+  
+    @media (max-height: 768px) {
+      body {
+        background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+      }
+  
+      .main {
+        width: 100%;
+        height: 95%;
+        margin: 2em auto;
+        text-align: center;
+        box-shadow: none;
+      }
+      body {
+        overflow: hidden;
+      }
+    
+    
+    }
+    
+    
+    @media (max-width: 768px) {
+      body {
+        background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));
+      }
+    
+    
+      .main {
+        width: 100%;
+        height: 95%;
+        margin: 2em auto;
+        text-align: center;
+        box-shadow: none;
+      }
+      
+      body {
+        overflow: hidden;
+      }
+    
+    
+    }

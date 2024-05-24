@@ -24,6 +24,9 @@ const signUpRouter = require('./sign-up.js');
 const adminAddCommentRouter = require('./adminAddComment.js');
 const adminInSufficientRouter = require('./adminInSufficient.js');
 const insufficientFormsRouter = require('./insufficient_forms.js');
+const updateLocRouter = require('./updateLoc.js');
+const aboutRouter = require('./about.js');
+
 
 router.use((req, res, next) => {
     next();
@@ -61,6 +64,8 @@ router.use('/sign-up', signUpRouter);
 router.use('/adminAddComment', adminAddCommentRouter);
 router.use('/adminInSufficient', adminInSufficientRouter);
 router.use('/insufficient_forms', insufficientFormsRouter);
+router.use('/updateLoc', updateLocRouter);
+router.use('/about', aboutRouter);
 
 // Home page router
 router.get('/home', homeController.getHomePage);

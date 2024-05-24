@@ -7,7 +7,9 @@ exports.loadProfile = (req, res) => {
         style: "profile.css",
         title: "profile",
         script: "profile.js",
-        user_id: req.session.loggedUserId
+        user_id: req.session.loggedUserId,
+        message: req.flash('message') // Προβολή του μηνύματος
+
     })
 };
 
@@ -24,6 +26,7 @@ exports.getUsernameById = function (req, res) {
                 style: "profile.css",
                 title: "Profile",
                 script: "profile.js",
+                message: req.flash('message'), // Προβολή του μηνύματος
                 user_id: req.session.loggedUserId,
                 user_name: username
             })

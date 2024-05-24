@@ -12,6 +12,7 @@ exports.getFormById = function (req, res) {
         res.render('editform', {
             style: "editform.css",
             title: "Update Event",
+            script: "editform.js",
             userId: req.session.loggedUserId,
             accountType: req.session.loggedUserType,
             form: form,
@@ -39,11 +40,11 @@ exports.updateForm = function (req, res) {
         damage_type: req.body.damage_type,
         severity: req.body.severity || "Δεν γνωρίζω",
         damage_info: req.body.damage_info,
-        file_path: req.file.buffer,
+        file_path: req.file.buffer || "null",
         status: "1", 
         additional_info: req.body.additional_info,
-        location:req.body.location,
-        admin_comments: "null",
+        location:req.body.location || 'Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη' ,
+        admin_comments: "",
         date: dateString,
         user_id: req.session.loggedUserId
         
@@ -52,7 +53,7 @@ exports.updateForm = function (req, res) {
     db.updateForm(form, function (err, result) {
         if (err) {
             req.flash('error', 'Σφάλμα κατά την ενημέρωση της φόρμας');
-            return res.redirect(`/editform/edit/${req.params.id}`);
+            return res.redirect(`/editform/${req.params.id}`);
         }
         req.flash('message', 'Η δήλωση σας επεξεργάστηκε επιτυχώς');
         res.redirect('/');
@@ -68,7 +69,9 @@ exports.deleteForm = function (req, res) {
         }
         else {
             req.flash('message', 'Η δήλωση διαγράφηκε με επιτυχία');
-            res.redirect('/incompleted_forms');
+            res.redirect('/profile');
         }
     });
 }
+
+

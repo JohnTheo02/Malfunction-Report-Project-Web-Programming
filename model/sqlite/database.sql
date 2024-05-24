@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `damage_reports`;
 CREATE TABLE "damage_reports" (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT,
     'damaged_building' TEXT DEFAULT "Δηλώθηκαν συντεταγμένες της βλάβης",
@@ -25,6 +26,7 @@ CREATE TABLE 'user'(
     'email' TEXT NOT NULL
 );
 
+DROP TABLE IF EXISTS `buildingsList`;
 CREATE TABLE "buildingsList" (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT,
     'name' TEXT,
@@ -32,6 +34,7 @@ CREATE TABLE "buildingsList" (
     'selectedDepartment' TEXT
 );
 
+DROP TABLE IF EXISTS `classesList`;
 CREATE TABLE "classesList" (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT,
     'name' TEXT,
@@ -39,16 +42,19 @@ CREATE TABLE "classesList" (
     'selectedDepartment' TEXT
 );
 
+DROP TABLE IF EXISTS `typesList`;
 CREATE TABLE "typesList" (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT,
     'type' TEXT
 );
 
+DROP TABLE IF EXISTS `severityList`;
 CREATE TABLE "severityList" (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT,
     'name' TEXT
 );
 
+DROP TABLE IF EXISTS `temp_location`;
 CREATE TABLE "temp_location" (
     "id"    INTEGER PRIMARY KEY AUTOINCREMENT,
     'user_id' INTEGER NOT NULL,

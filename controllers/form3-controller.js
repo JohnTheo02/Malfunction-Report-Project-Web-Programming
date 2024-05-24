@@ -37,7 +37,7 @@ exports.submitEvent = function (req, res, next) {
         additional_info: req.body.additional_info,
         user_id: req.session.loggedUserId,
         location: 'Δεν καταχωρήθηκαν συντεταγμένες από τον χρήστη',
-        admin_comments: "null",
+        admin_comments: "",
         date: dateString
     };
 

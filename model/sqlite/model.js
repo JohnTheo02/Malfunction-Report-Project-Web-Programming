@@ -364,6 +364,29 @@ exports.updateForm = function (form, callback) {
     }
 }
 
+exports.updateFormLoc = function (form, callback) {
+    let stmt = sql.prepare("UPDATE damage_reports SET damaged_building = ?, class_name = ?, damage_type = ?, severity = ?, damage_info = ?,status=?, additional_info = ?,admin_comments=?, location=? WHERE id = ?");
+    try {
+        stmt.run(
+            form.damaged_building,
+            form.class_name,
+            form.damage_type,
+            form.severity,
+            form.damage_info,
+            form.status,
+            form.additional_info,
+            form.admin_comments,
+            form.location,
+            form.id
+        );
+        callback(null, true);
+    } catch (err) {
+        callback(err, null);
+    }
+    //console.log(form)
+}
+
+
 exports.deleteForm = function (id, callback) {
     let stmt = sql.prepare("DELETE FROM damage_reports WHERE id = ?");
     try {
@@ -441,4 +464,17 @@ exports.getInSufficientFormsById = function (user_id, callback) {
     }
     callback(null, insufficient_forms);
 
+}
+
+
+
+exports.updateLoc = function (loc,id, callback) {
+    let stmt = sql.prepare("UPDATE damage_reports SET location=? WHERE id = ?");
+    try {
+        stmt.run(loc, id);
+        callback(null, true);
+    } catch (err) {
+        callback(err, null);
+    }
+    
 }

@@ -6,8 +6,8 @@ html {
 }
 
 * {
-   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
+   font-family: 'Segoe UI';
+ }
 
 body {
    margin: 0;
@@ -149,7 +149,7 @@ a {
    border-top-right-radius: 1em;
    cursor: pointer;
    transition: transform 0.3s ease-in-out;
-   height: 6.7em;
+   height: 6.3em;
 
 }
 
@@ -162,12 +162,14 @@ a {
    width: 13em;
    margin-bottom: 2em;
    transition: all 0.3s ease;
+   
 }
 
 .image-container a p {
    text-wrap: wrap;
    font-size: 0.8em;
    color: black;
+  
 }
 
 .image-container a:link {
@@ -207,7 +209,7 @@ a {
 
 .img p {
    color: white;
-   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+   
 }
 
 .img:hover p {

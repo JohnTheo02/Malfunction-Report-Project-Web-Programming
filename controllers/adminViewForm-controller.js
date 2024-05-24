@@ -29,6 +29,7 @@ exports.getFormById = function (req, res) {
             style: "adminViewForm.css",
             title: "AdminViewForm",
             script: "adminViewForm.js",
+            
             admin_id: req.session.loggedUserId,
             accountType: req.session.loggedUserType,
             form: form,
