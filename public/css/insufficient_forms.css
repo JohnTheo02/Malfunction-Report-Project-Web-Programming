@@ -30,6 +30,9 @@ h3 {
     margin: 0;
 }
 
+.admin_comment{
+    font-weight: 600;
+}
 .header {
     display: flex;
     justify-content: center;

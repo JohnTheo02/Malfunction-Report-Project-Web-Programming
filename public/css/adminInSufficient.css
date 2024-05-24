@@ -89,6 +89,10 @@ li{
     cursor: pointer;
 }
 
+.admin_comment{
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     body {
         background-color: white;
