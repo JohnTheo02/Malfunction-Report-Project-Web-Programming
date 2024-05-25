@@ -1,7 +1,8 @@
 <body>
     <div class="main">
         <h2>Επεξεργασία Βλάβης {{id}}</h2>
-        <form id="mainForm" autocomplete="off" class="form" enctype="multipart/form-data" action="/editform/update/{{id}}" method="POST">
+        <form id="mainForm" autocomplete="off" class="form" enctype="multipart/form-data"
+            action="/editform/update/{{id}}" method="POST">
             <input placeholder="Όνομα κτιρίου" type="text" id="damaged_building" name="damaged_building"
                 list="building_list" value="{{form.damaged_building}}">
             <br>
@@ -10,11 +11,25 @@
             <br>
             <input placeholder="Είδος βλάβης" type="text" id="damage_type" name="damage_type" list="damage_list"
                 value="{{form.damage_type}}" required>
+            <datalist id="class_list">
+
+                <option value="Ηλεκτρολογική βλάβη">Ηλεκτρολογική βλάβη</option>
+                <option value="Υδραυλική βλάβη">Υδραυλική βλάβη</option>
+                <option value="Οικοδομική βλάβη">Οικοδομική βλάβη</option>
+                <option value="Κουφώματα">Κουφώματα</option>
+                <option value="Μονώσεις">Μονώσεις</option>
+                <option value="Κλιματισμός">Κλιματισμός</option>
+                <option value="Προσβασιμότητα">Προσβασιμότητα</option>
+                <option value="Άλλο">Άλλο</option>
+
+            </datalist>
             <br>
             <label class="loc">Συντεταγμένες βλάβης:</label>
-             <input placeholder="Συντεταγμένες" type="text" id="location" name="location"
-                value="{{form.location}}" required>
-            <button id="locationButton" type="button" onclick="submitWithDifferentAction('/updateLoc/{{id}}', 'POST')"><i class="fa-solid fa-map-location-dot"></i></button>
+            <input placeholder="Συντεταγμένες" type="text" id="location" name="location" value="{{form.location}}"
+                required>
+            <button id="locationButton" type="button"
+                onclick="submitWithDifferentAction('/updateLoc/{{id}}', 'POST')"><i
+                    class="fa-solid fa-map-location-dot"></i></button>
             <div class="select">
                 <select name="severity" id="severity" required>
                     <option selected value="{{form.severity}}">{{form.severity}}</option>
@@ -25,12 +40,14 @@
                 </select>
             </div>
             <br>
-            <textarea class="damage_info" id="damage_info" name="damage_info" placeholder="Περιγραφή βλάβης..." rows="8" wrap="soft">{{form.damage_info}}</textarea>
+            <textarea class="damage_info" id="damage_info" name="damage_info" placeholder="Περιγραφή βλάβης..." rows="8"
+                wrap="soft">{{form.damage_info}}</textarea>
             <fieldset class="field_file">
                 <label for="file">Προσθέστε μια φωτογραφία της βλάβης:</label><br>
                 <input type="file" id="file_path" name="file_path" accept=".jpg, .jpeg, .png" required>
             </fieldset>
-            <textarea class="additional_info" id="additional_info" name="additional_info" placeholder="Πρόσθετα σχόλια..." rows="8" wrap="soft">{{form.additional_info}}</textarea>
+            <textarea class="additional_info" id="additional_info" name="additional_info"
+                placeholder="Πρόσθετα σχόλια..." rows="8" wrap="soft">{{form.additional_info}}</textarea>
             <br>
             <button id="submitButton" type="submit">Υποβολή</button>
         </form>
@@ -42,15 +59,15 @@
             var originalAction = form.action;
             var originalMethod = form.method;
             var originalEnctype = form.enctype;
-            
+
             form.action = action;
             form.method = method;
             form.removeAttribute('enctype');
-            
+
             form.submit();
 
             // Επαναφορά των αρχικών ιδιοτήτων μετά την υποβολή
-            setTimeout(function() {
+            setTimeout(function () {
                 form.action = originalAction;
                 form.method = originalMethod;
                 form.enctype = originalEnctype;
