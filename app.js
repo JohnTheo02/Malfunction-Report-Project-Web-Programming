@@ -1,6 +1,5 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
-const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -33,8 +32,7 @@ app.use(session({
 app.use(flash());
 
 app.engine('hbs', handlebars.engine({
-    extname: '.hbs',
-    helpers: require('./controllers/helpers.js'),
+    extname: '.hbs'
 }));
 
 app.set('view engine', 'hbs');
