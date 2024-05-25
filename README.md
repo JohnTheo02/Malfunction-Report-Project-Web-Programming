@@ -7,6 +7,7 @@
 #### Public URL 
 
 URL: [https://malfunctionreport-26370e429b90.herokuapp.com/](https://malfunctionreport-26370e429b90.herokuapp.com/)
+
 or scan the QR:
 
 ![malfunction_report_qr_RESIZED](https://github.com/JohnTheo02/Malfunction-Report-Project-Web-Programming/assets/160852499/5e94091e-edea-4f4f-b9b0-a6893088a0cf)
