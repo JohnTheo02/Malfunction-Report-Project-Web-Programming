@@ -13,7 +13,7 @@ or scan the QR:
 ![malfunction_report_qr_RESIZED](https://github.com/JohnTheo02/Malfunction-Report-Project-Web-Programming/assets/160852499/5e94091e-edea-4f4f-b9b0-a6893088a0cf)
 
 
-###### for better experience and access to your exact location browse it form Chrome, Mozilla or Edge
+###### for better experience and access to your exact location browse it from Chrome, Mozilla or Edge
 
 ---
 
