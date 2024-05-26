@@ -175,12 +175,14 @@ width: 100%;
 }
 
 .btn{
+  padding: 0;
   color: #2e44ff;
   font-weight: 600;
   font-family:sans-serif;
   background-color: white;
   border: none;
   transition: all 0.3s ease; 
+  font-size: 1.1em;
 }
 
 .btn:hover{

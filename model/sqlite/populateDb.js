@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const fs = require('fs');
 const sql = new db('database.sqlite');
 
+
 let data = fs.readFileSync('./database.sql', 'utf8');
 
 const sqlStatements = data.split(';');

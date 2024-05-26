@@ -56,17 +56,17 @@
     <script>
         function submitWithDifferentAction(action, method) {
             var form = document.getElementById('mainForm');
-            var originalAction = form.action;
-            var originalMethod = form.method;
-            var originalEnctype = form.enctype;
+            var originalAction = form.action; //save original action
+            var originalMethod = form.method; //save original method
+            var originalEnctype = form.enctype; //save original enctype
 
-            form.action = action;
-            form.method = method;
-            form.removeAttribute('enctype');
+            form.action = action; //set the /updateLoc/{{id}} action
+            form.method = method; // set GET method
+            form.removeAttribute('enctype');  //remove enctype method
 
             form.submit();
 
-            // Επαναφορά των αρχικών ιδιοτήτων μετά την υποβολή
+            // after 1 min reset deafults for Submiting the form
             setTimeout(function () {
                 form.action = originalAction;
                 form.method = originalMethod;

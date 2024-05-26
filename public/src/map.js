@@ -78,7 +78,7 @@ async function initMap() {
       
       console.log("Longitude and Latitude:", LngStr+","+LatStr);
       
-      txtInput.value =  LngStr+", "+LatStr;
+      txtInput.value = LatStr+", "+LngStr;
       console.log(txtInput.value);
       /* window.location.href = "/form2"; */ 
     })

@@ -85,9 +85,9 @@ li{
 .eraseBtnLabel{
     margin-right: 0.5em;
 }
-.editBtnLabel,
-.eraseBtnLabel {
-    margin-left: 0.5em;
+.editBtnLabel
+ {
+    margin-right: 0.5em;
 }
 
 .editBtnLabel a,
