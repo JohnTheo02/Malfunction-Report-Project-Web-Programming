@@ -188,6 +188,7 @@ button:hover {
   background-color: white;
   font-size: 1.3em;
   color: rgb(255, 0, 0);
+  margin: 0;
 }
 
 #location {
@@ -196,7 +197,7 @@ button:hover {
   font-family: sans-serif;
   height: 2em;
   width: 60%;
-  
+  margin-left: 0.3em;
   border-style: solid;
   border: 1px solid black;
   border-radius: 0.7em;
