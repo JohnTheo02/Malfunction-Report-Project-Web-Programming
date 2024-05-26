@@ -39,7 +39,8 @@
   
   .divider {
     height: 10em; /* Adjust height as needed */
-    width: 1px;
+    width: 2px;
+    margin:0.5em;
     background-color: #000000;
   }
 
@@ -65,7 +66,7 @@
         align-items: center;
 
         margin: 0 auto;
-        padding: 1em;
+        padding: 0.5em;
       }
  
   }
@@ -91,7 +92,7 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 auto;
-        padding: 1em;
+        padding: 0.5em;
       }
 
   

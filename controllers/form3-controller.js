@@ -1,5 +1,7 @@
 let db = require('../model/sqlite/model.js');
 const moment = require('moment-timezone');
+
+
 exports.goToForm3 = (req, res) => {
     res.render('form3', {
         style: "form3.css",
@@ -12,9 +14,9 @@ exports.goToForm3 = (req, res) => {
 };
 exports.submitEvent = function (req, res, next) {
     let date = new Date();
-    // Μετατροπή της ώρας σε ώρα Αθηνών
+    // Converting current Time to Athens Timezone
     let athensTime = moment(date).tz("Europe/Athens");
-    // Μορφοποίηση της ώρας σε μορφή string
+    // Making the time string
     let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
 
     // Check if req.file is defined

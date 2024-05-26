@@ -118,7 +118,7 @@
     
     }
     
-    
+    /*For mobile use*/
     @media (max-width: 768px) {
       body {
         background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255));

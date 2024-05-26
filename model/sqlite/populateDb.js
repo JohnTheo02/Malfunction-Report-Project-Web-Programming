@@ -1,3 +1,6 @@
+
+// Δημιουργία του Database μας
+
 'use strict';
 const db = require('better-sqlite3')
 const bcrypt = require('bcrypt');
@@ -15,6 +18,7 @@ for (let i = 0; i < sqlStatements.length; i++) {
     stmt.run();
 }
 
+
 // Populate admin table with 2 admin users
 var adminEmail = ['admin1', 'admin2'];
 var adminPassword = ['admin1', 'admin2'];
@@ -25,7 +29,7 @@ for (let i = 0; i < adminEmail.length; i++) {
     stmt.run(adminEmail[i], hashedPassword);
 }
 
-
+//Χειροκίνητη τοποθέτηση των Τμημάτων, Αιθουσών, ειδών και σοβαροτήτων στο Database
 
 var htmyBuildings = ['Βαρέα ΗΜΤΥ', 'Επέκταση ΗΜΤΥ', 'Πολυόροφο ΗΜΤΥ', 'Άλλο'];
 var arxitBuildings = ['Αρχιτεκτονική Βιβλιοθήκη', 'Κτίριο Β', 'Σχεδιαστήριο Σ1', 'Σχεδιαστήριο Σ2', 'Σχεδιαστήριο Σ3']

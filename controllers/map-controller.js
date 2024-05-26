@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+
 let db = require('../model/sqlite/model.js');
 
 exports.getMap = (req, res) => {
@@ -14,7 +13,7 @@ exports.getMap = (req, res) => {
 
 exports.tempLocation = function (req, res) {
     
-    let tmpLoc = req.body.textInput;
+    let tmpLoc = req.body.textInput; //save the invinsible textInput with the location in a temporary loc
     //console.log(tmpLoc);
     //.log(req.session.loggedUserId);
     db.submitTempLoc(tmpLoc, req.session.loggedUserId, function (err, result) {

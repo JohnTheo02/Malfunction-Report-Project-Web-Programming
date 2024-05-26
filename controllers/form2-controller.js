@@ -1,5 +1,6 @@
 let db = require('../model/sqlite/model.js');
 const moment = require('moment-timezone');
+
 exports.goToForm2 = (req, res) => {
     res.render('form2', {
         style: "form2.css",
@@ -14,7 +15,7 @@ exports.submitEvent = function (req, res, next) {
     let date = new Date();
     // Μετατροπή της ώρας σε ώρα Αθηνών
     let athensTime = moment(date).tz("Europe/Athens");
-    // Μορφοποίηση της ώρας σε μορφή string
+    // Making the time string
     let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
 
 
@@ -28,6 +29,7 @@ exports.submitEvent = function (req, res, next) {
             console.log(err);
             res.status(500).send(err);
         } else {
+            
             let form = {
                 id: req.params.id,
                 damaged_building: "Δηλώθηκαν συντεταγμένες της βλάβης",
@@ -43,7 +45,7 @@ exports.submitEvent = function (req, res, next) {
                 admin_comments: "",
                 date: dateString
             };
-
+        
             db.submitEvent(form, function (err, result) {
                 if (err) {
                     console.log(err);
@@ -58,6 +60,9 @@ exports.submitEvent = function (req, res, next) {
         }
     });
 };
+
+
+// DataList of all class names
 exports.getAllClassNames = function (req, res, next) {
     db.getAllClassNames(function (err, classes) {
         if (err) {
@@ -80,6 +85,9 @@ exports.getAllClassNames = function (req, res, next) {
     
 }
 
+// get location from temp_location based on user_id
+// Temp_location is used to save the location that user has selected until he sumbits the form
+// By using this we solve the issue of user going back and selecting other location from the map
 exports.getLocationById = function (req, res,next) {
     db.getLocationById(req.session.loggedUserId,function (err, location) {
         if (err) {
@@ -88,7 +96,7 @@ exports.getLocationById = function (req, res,next) {
         }
         else {
             //console.log(severity)
-            res.locals.location = location;
+            res.locals.location = location; //save it 
             next();
         
         }

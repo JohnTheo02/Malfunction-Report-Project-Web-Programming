@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router();
+
 
 exports.getHomePage = (req, res) => {
     //const userIsSignedIn = true; 
-    res.render('home', {
+    res.render('home', { //render home Page
         style: "home.css",
         title: "Home",
         script: "home.js",
@@ -11,7 +10,7 @@ exports.getHomePage = (req, res) => {
         notSignedIn:!req.session.loggedUserId,
         user_id: req.session.loggedUserId,
         accountType: req.session.accountType,
-        message: req.flash('message') // Προβολή του μηνύματος
+        message: req.flash('message') // Flashing messages when on home Page
     })
 };
 

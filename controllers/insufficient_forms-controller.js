@@ -1,8 +1,7 @@
-const express = require('express');
-const router = express.Router();
+
 let db = require('../model/sqlite/model.js');
 
-
+//get insufficient forms by user ID
 exports.getInSufficientFormsById = function (req, res, next) {
     db.getInSufficientFormsById(req.session.loggedUserId, function (err, insufficient_forms) {
         if (err) {

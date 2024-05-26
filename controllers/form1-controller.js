@@ -2,7 +2,7 @@ let db = require('../model/sqlite/model.js');
 const moment = require('moment-timezone');
 
 exports.goToForm = (req, res) => {
-    res.render('form1', {
+    res.render('form1', { //render hbs
         style: "form1.css",
         title: "form",
         script: "form1.js",
@@ -14,12 +14,12 @@ exports.goToForm = (req, res) => {
 exports.submitEvent = function (req, res, next) {
     
     let date = new Date();
-    // Μετατροπή της ώρας σε ώρα Αθηνών
+    // Converting current Time to Athens Timezone
     let athensTime = moment(date).tz("Europe/Athens");
-    // Μορφοποίηση της ώρας σε μορφή string
+    // Making the time string
     let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
 
-    // Έλεγχος αν το req.file είναι ορισμένο
+    // Checking if req.file exists
     if (!req.file) {
         console.error("File not found in request");
         res.status(400).send("File not found in request");
@@ -27,7 +27,7 @@ exports.submitEvent = function (req, res, next) {
     }
 
     let form = {
-        id: req.params.id,
+        id: req.params.id, //take id from params
         damaged_building: req.body.damaged_building,
         class_name: req.body.class_name,
         damage_type: req.body.damage_type,
@@ -43,7 +43,7 @@ exports.submitEvent = function (req, res, next) {
         date: dateString
     };
 
-    db.submitEvent(form, function (err, result) {
+    db.submitEvent(form, function (err, result) { //calling the model function with values from form
         if (err) {
             console.log(err);
             res.status(500).send(err);
@@ -56,6 +56,7 @@ exports.submitEvent = function (req, res, next) {
     });
 };
 
+// DataList of buildings based on what department user has selected
 exports.getBuildings = function (req, res, next) {
     db.getBuildings(function (err, buildings) {
         if (err) {
@@ -74,6 +75,7 @@ exports.getBuildings = function (req, res, next) {
     });
 };
 
+// DataList of classnames based on what department user has selected
 exports.getClassName = function (req, res, next) {
     db.getClassName(function (err, classes) {
         if (err) {
@@ -92,6 +94,7 @@ exports.getClassName = function (req, res, next) {
     });
 };
 
+// DataList of DamageTypes based on what department user has selected
 exports.getDamageType = function (req, res, next) {
     db.getDamageType(function (err, types) {
         if (err) {
@@ -110,6 +113,7 @@ exports.getDamageType = function (req, res, next) {
     });
 };
 
+// DataList of selerity based on what department user has selected
 exports.getSeverity = function (req, res, next) {
     db.getSeverity(function (err, severities) {
         if (err) {

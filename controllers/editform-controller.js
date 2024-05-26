@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+
 let db = require('../model/sqlite/model.js');
 const moment = require('moment-timezone');
 
@@ -21,11 +20,13 @@ exports.getFormById = function (req, res) {
     });
 }
 
+
+//updating form
 exports.updateForm = function (req, res) {
     let date = new Date();
-    // Μετατροπή της ώρας σε ώρα Αθηνών
+    // Converting current Time to Athens Timezone
     let athensTime = moment(date).tz("Europe/Athens");
-    // Μορφοποίηση της ώρας σε μορφή string
+    // Making the time string
     let dateString = athensTime.format('YYYY-MM-DD HH:mm:ss');
 
     if (!req.file) {

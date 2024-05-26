@@ -206,7 +206,7 @@ width: 100%;
   padding-bottom: 2em;
   font-size: 1.8em;
 }
-
+/*For mobile use*/
 @media (max-width: 768px) {
 body {
   width: 100%;

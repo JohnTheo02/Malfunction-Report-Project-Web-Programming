@@ -1,5 +1,4 @@
-const express = require('express');
-const router = express.Router();
+
 let db = require('../model/sqlite/model.js');
 
 
@@ -14,6 +13,7 @@ exports.goToInCompletedForms = (req, res) => {
     })
 };
 
+//get incompleted forms by user ID
 exports.getInCompletedFormsById = function (req, res, next) {
     db.getInCompletedFormsById(req.session.loggedUserId, function (err, incompleted_forms) {
         if (err) {
@@ -21,8 +21,8 @@ exports.getInCompletedFormsById = function (req, res, next) {
             res.status(500).send(err);
         } else {
             
-            req.incompleted_forms = incompleted_forms;
-            res.render('incompleted_forms', {
+            req.incompleted_forms = incompleted_forms; //saving each incompleted form in locals
+            res.render('incompleted_forms', { //rendering hbs
                 style: "incompleted_forms.css",
                 title: "Incompleted_forms",
                 script: "incompleted_forms.js",
