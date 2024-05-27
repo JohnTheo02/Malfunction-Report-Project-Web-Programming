@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     break;
                 case 'Πολυτεχνική Σχολή':
                     addImages(['img/polutexnikh/architecture.png', 'img/polutexnikh/chemical_enginear.png', 'img/polutexnikh/ece.png', 'img/polutexnikh/mhx_hl_upolog.png', 'img/polutexnikh/mhx_kai_aeronauphgwn.png', 'img/polutexnikh/politikwn.png'],
-                        ['Τμήμα Αρχιτεκτόνων Μηχανικών', 'Τμήμα Ηλεκτρολόγων Μηχανικών και Τεχνολογίας Υπολογιστών', 'Τμήμα Μηχανικών Ηλεκτρονικών Υπολογιστών και Πληροφορικής', 'Τμήμα Μηχανολόγων και Αεροναυπηγών Μηχανικών', 'Τμήμα Πολιτικών Μηχανικών', 'Τμήμα Χημικών Μηχανικών']);
+                        ['Τμήμα Αρχιτεκτόνων Μηχανικών', 'Τμήμα Χημικών Μηχανικών', 'Τμήμα Ηλεκτρολόγων Μηχανικών και Τεχνολογίας Υπολογιστών', 'Τμήμα Μηχανικών Ηλεκτρονικών Υπολογιστών και Πληροφορικής', 'Τμήμα Μηχανολόγων και Αεροναυπηγών Μηχανικών', 'Τμήμα Πολιτικών Μηχανικών']);
                     nav.classList.remove('active');
                     only_nav.classList.toggle("active");
                     Menu.classList.remove("active");
