@@ -23,9 +23,20 @@ exports.goToRegistrationPage = (req, res) => {
         accountType: req.session.accountType
     })
 };
-
 exports.signUp = function (req, res) {
-    db.signUp(req.body.username, req.body.password, req.body.email, (err, result) => {
+    const { username, email, password, passwordConf } = req.body;
+
+    if (password !== passwordConf) {
+        return res.render('sign-up', {
+            style: "sign.css",
+            title: "Sign up",
+            script: "sign-up.js",
+            accountType: req.session.accountType,
+            registerError: { message: "Οι κωδικοί είναι διαφορετικοί" }
+        });
+    }
+
+    db.signUp(username, password, email, (err, result) => {
         if (err) {
             console.error('Failed to register: ' + err);
             res.redirect('/');
@@ -33,16 +44,13 @@ exports.signUp = function (req, res) {
         else if (result.message) {
             res.render('sign-up', {
                 style: "sign.css",
-                title: "sign-up",
+                title: "Sign up",
                 script: "sign-up.js",
                 accountType: req.session.accountType,
                 registerError: { message: result.message }
             });
         }
         else {
-            //console.log('registration successful');
-            
-            //res.redirect('/');
             res.render('home', {
                 style: "home.css",
                 title: "Home",
@@ -51,10 +59,10 @@ exports.signUp = function (req, res) {
                 signedIn: req.session.loggedUserId,
                 notSignedIn: !req.session.loggedUserId,
                 user_id: req.session.loggedUserId
-            })
+            });
         }
-    })
-}
+    });
+};
 
 exports.signIn = function (req, res) {
     //console.log(req.body);
